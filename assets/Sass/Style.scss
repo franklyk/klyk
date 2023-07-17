@@ -1,10 +1,12 @@
 $colorBlue: #000050e1;
 $colorBlue-Sky: #8a8aff3d;
 $colorBlueDark: rgba(0, 0, 82, 0.966);
-$colorBrown: #3a2323b6;
+$colorBrown: rgb(134, 20, 0);
+$colorRed: #ce0a0a;
 $colorWhite: #fff;
 $colorWhite-Lite: #d4d5d659;
 $colorWhite-Dark: #000000b9;
+$colorYellow: #9191179a;
 
 $textShadow: 1px 1px 1px #000000b0;
 
@@ -114,9 +116,9 @@ img{
         }
     }
     .main{
+        border-radius: 10px;
         display: grid;
-        gap: 30px
-        ;
+        gap: 20px;
         grid-area: main;
         grid-template-columns: repeat(2, 50%);
         margin: 0 auto;
@@ -130,6 +132,7 @@ img{
         .intro{
             border-radius: 10px;
             box-shadow: $boxShadow;
+            margin: auto;
             padding: 30px;
             text-indent: 30px;
             p{
@@ -193,25 +196,87 @@ img{
             padding: 30px;
         }
         .exemples{
-            @include config();
+            // @include config();
             @include fontConfig(1.5rem, italic, bolder);
+            background: $colorWhite-Lite;
+            border-radius: 10px;
+            margin: auto;
             padding: 30px;
-            text-align: center;
+            width: 430px;
             h3{
-                color: $colorWhite;
+                color: $colorBlue-Sky;
                 margin-bottom: 30px;
             }
             i{
-                @include config();
+                // @include config();
                 font-size: 3.5rem;
-                .fa-burger{
-                    color: $colorWhite;
-                }
+                padding: 10px;
             }
             li{
-                @include config();
-                color: $colorWhite;
+                // @include config();
+                padding: 10px;
+            }
+            .burger{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorBrown;
+                display: flex;
                 margin: 30px 0;
+            }
+            .plane{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color:$colorWhite-Lite;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .locate{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorRed;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .cloud{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorYellow;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .bascket{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorRed;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .carrot{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: #f55236;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .icons{
+                // @include config();
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: darkgoldenrod;
+                display: flex;
+                margin: 30px 0;
+
             }
         }
     }

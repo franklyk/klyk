@@ -87,8 +87,9 @@ img {
   color: #fff;
 }
 .container .main {
+  border-radius: 10px;
   display: grid;
-  gap: 30px;
+  gap: 20px;
   grid-area: main;
   grid-template-columns: repeat(2, 50%);
   margin: 0 auto;
@@ -106,6 +107,7 @@ img {
 .container .main .intro {
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  margin: auto;
   padding: 30px;
   text-indent: 30px;
 }
@@ -180,28 +182,74 @@ img {
   padding: 30px;
 }
 .container .main .exemples {
-  border: 1px solid black;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: bolder;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6901960784);
+  background: rgba(212, 213, 214, 0.3490196078);
+  border-radius: 10px;
+  margin: auto;
   padding: 30px;
-  text-align: center;
+  width: 430px;
 }
 .container .main .exemples h3 {
-  color: #fff;
+  color: rgba(138, 138, 255, 0.2392156863);
   margin-bottom: 30px;
 }
 .container .main .exemples i {
-  border: 1px solid black;
   font-size: 3.5rem;
-}
-.container .main .exemples i .fa-burger {
-  color: #fff;
+  padding: 10px;
 }
 .container .main .exemples li {
-  border: 1px solid black;
-  color: #fff;
+  padding: 10px;
+}
+.container .main .exemples .burger {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: rgb(134, 20, 0);
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .plane {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: rgba(212, 213, 214, 0.3490196078);
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .locate {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: #ce0a0a;
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .cloud {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: rgba(145, 145, 23, 0.6039215686);
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .bascket {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: #ce0a0a;
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .carrot {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: #f55236;
+  display: flex;
+  margin: 30px 0;
+}
+.container .main .exemples .icons {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  color: darkgoldenrod;
+  display: flex;
   margin: 30px 0;
 }
 .container .jobs {
