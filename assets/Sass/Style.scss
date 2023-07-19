@@ -84,15 +84,12 @@ img{
 
 .container{
     display: grid;
-    grid-template-columns: minmax(70px, 1fr) auto  minmax(70px, 1fr);
     grid-template-areas: 
     "header header header"
     "main main main"
     "jobs jobs jobs"
     "footer footer footer"
     ;
-    width: 100%;
-
     .header{
         align-items: center;
         background: linear-gradient(to bottom, $colorBlue, transparent);
@@ -107,7 +104,7 @@ img{
             ul{
                 display: flex;
                 li{
-                    margin: 0 30px;
+                    margin: 0 20px;
                     a{
                         @include fontConfig(1.3rem, italic, bold);
                         color: $colorWhite;
@@ -119,14 +116,16 @@ img{
         }
     }
     .main{
+        grid-template-columns: minmax(1fr, 70px) auto  minmax(1fr, 70px);
         border-radius: 10px;
         display: grid;
         gap: 20px;
         grid-area: main;
         grid-template-columns: repeat(2, 50%);
+        justify-content: center;
         margin: 0 auto;
-        width: 900px;
-        padding: 30px;
+        max-width: 860px;
+        padding: 20px;
         .title-site{
             @include fontConfig(3.5rem, italic, bolder);
             color: $colorBlue-Sky;
@@ -302,6 +301,8 @@ img{
         }
         .conclusion2{
             background-image: url(../Img/wolrd-connected.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 10px;
             box-shadow: $boxShadow;
             p{
@@ -319,7 +320,7 @@ img{
             align-items: center;
             color: $colorBlue-Sky;
             display: grid;
-            grid-column: 2;
+            // grid-column: 2;
         }
         .div3{
             padding: 0 30px;
@@ -398,26 +399,26 @@ img{
         
     }
     .jobs{
-        @include config();
-        background: $colorYellow;
+        h3{
+            @include fontConfig(2.5rem, italic, bolder);
+            color: $colorBlue-Sky;
+            text-align: center;
+        }
         grid-area: jobs;
+        margin: 0 auto;
         overflow-x: auto;
-        padding: 30px;
+        width: 860px;
         ul{
-            @include config();
-            background: red;
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(auto-fit, 142px);
+            justify-items: center;
+            margin: auto;
             li{
-                @include config();
-                background: gray;
-                padding: 30px;
                 img{
-                    @include config();
-                    width: 100%;
+                    box-shadow: $boxShadow;
+                    width: 120px;
                 }
             }
-
         }
     }
     .footer{
@@ -442,5 +443,86 @@ img{
 
             }
         }
+    }
+}
+@media (max-width: 1100px){
+    .container{
+        .header{
+            padding: 20px;
+        }
+        .main{
+            width: 800px;
+        }
+    }
+}
+@media (max-width: 870px){
+    .container{
+        grid-template-areas: 
+        "header"
+        "main"
+        "jobs"
+        "footer"
+        ;
+        .main{
+            grid-template-columns: auto;
+            justify-items: center;
+            width: 80%;
+        }
+        .jobs{
+            // @include config();
+            // background: $colorYellow;
+            width: 90%;
+            padding: 10px;
+            h3{
+                @include fontConfig(1.8rem, italic, bolder);
+                padding: 30px;
+            }
+            ul{
+                // background: red;
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(auto-fit, 300px);
+                justify-content: center;
+                li{
+                    img{
+                        box-shadow: $boxShadow;
+                        // width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:700px){
+    .container{
+
+        .header{
+            .nav{
+                display: none;
+            }
+        }
+        .main{
+            grid-template-columns: auto;
+            justify-items: center;
+            margin: 0 auto;
+            padding: 5px;
+            width: 80%;
+            div{
+                width: 80%;
+            }
+            img{
+                width: 80%;
+            }
+        }
+        .jobs{
+            ul{
+                grid-template-columns: repeat(auto-fit, 200px);                
+            }
+        }
+    }
+}
+@media (max-width: 550px){
+    .jobs{
+        overflow-x: auto;
     }
 }

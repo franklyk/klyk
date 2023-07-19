@@ -59,9 +59,7 @@ img {
 
 .container {
   display: grid;
-  grid-template-columns: minmax(70px, 1fr) auto minmax(70px, 1fr);
   grid-template-areas: "header header header" "main main main" "jobs jobs jobs" "footer footer footer";
-  width: 100%;
 }
 .container .header {
   align-items: center;
@@ -78,7 +76,7 @@ img {
   display: flex;
 }
 .container .header .nav ul li {
-  margin: 0 30px;
+  margin: 0 20px;
 }
 .container .header .nav ul li a {
   font-size: 1.3rem;
@@ -88,14 +86,16 @@ img {
   color: #fff;
 }
 .container .main {
+  grid-template-columns: minmax(1fr, 70px) auto minmax(1fr, 70px);
   border-radius: 10px;
   display: grid;
   gap: 20px;
   grid-area: main;
   grid-template-columns: repeat(2, 50%);
+  justify-content: center;
   margin: 0 auto;
-  width: 900px;
-  padding: 30px;
+  max-width: 860px;
+  padding: 20px;
 }
 .container .main .title-site {
   font-size: 3.5rem;
@@ -283,6 +283,8 @@ img {
 }
 .container .main .conclusion2 {
   background-image: url(../Img/wolrd-connected.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
 }
@@ -306,7 +308,6 @@ img {
   align-items: center;
   color: rgba(138, 138, 255, 0.2392156863);
   display: grid;
-  grid-column: 2;
 }
 .container .main .div3 {
   padding: 0 30px;
@@ -393,26 +394,28 @@ img {
   border-radius: 0 0 10px 10px;
 }
 .container .jobs {
-  border: 1px solid black;
-  background: rgba(145, 145, 23, 0.6039215686);
   grid-area: jobs;
+  margin: 0 auto;
   overflow-x: auto;
-  padding: 30px;
+  width: 860px;
+}
+.container .jobs h3 {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6901960784);
+  color: rgba(138, 138, 255, 0.2392156863);
+  text-align: center;
 }
 .container .jobs ul {
-  border: 1px solid black;
-  background: red;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-}
-.container .jobs ul li {
-  border: 1px solid black;
-  background: gray;
-  padding: 30px;
+  grid-template-columns: repeat(auto-fit, 142px);
+  justify-items: center;
+  margin: auto;
 }
 .container .jobs ul li img {
-  border: 1px solid black;
-  width: 100%;
+  box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  width: 120px;
 }
 .container .footer {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7254901961), transparent);
@@ -441,6 +444,71 @@ img {
 }
 .container .footer .propert a {
   color: rgba(212, 213, 214, 0.3490196078);
+}
+
+@media (max-width: 1100px) {
+  .container .header {
+    padding: 20px;
+  }
+  .container .main {
+    width: 800px;
+  }
+}
+@media (max-width: 870px) {
+  .container {
+    grid-template-areas: "header" "main" "jobs" "footer";
+  }
+  .container .main {
+    grid-template-columns: auto;
+    justify-items: center;
+    width: 80%;
+  }
+  .container .jobs {
+    width: 90%;
+    padding: 10px;
+  }
+  .container .jobs h3 {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6901960784);
+    padding: 30px;
+  }
+  .container .jobs ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+  }
+  .container .jobs ul li img {
+    box-shadow: 3px 3px 3px 3px rgba(68, 67, 67, 0.062745098);
+  }
+}
+@media (max-width: 700px) {
+  .container .header .nav {
+    display: none;
+  }
+  .container .main {
+    grid-template-columns: auto;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 5px;
+    width: 80%;
+  }
+  .container .main div {
+    width: 80%;
+  }
+  .container .main img {
+    width: 80%;
+  }
+  .container .jobs ul {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+}
+@media (max-width: 550px) {
+  .jobs {
+    overflow-x: auto;
+  }
 }
 
 /*# sourceMappingURL=Style.css.map */
