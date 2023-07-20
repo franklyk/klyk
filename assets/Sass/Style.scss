@@ -96,12 +96,13 @@ strong{
     .header{
         align-items: center;
         background: linear-gradient(to bottom, $colorBlue, transparent);
-        display: grid;
-        grid-template-columns: minmax(150px, 1fr) auto auto;
+        display: flex;
         grid-area: header;
+        justify-content: space-between;
         padding: 30px;
         .logo{
             max-width: 150px;
+            min-width: auto;
         }
         .nav{
             ul{
@@ -121,294 +122,298 @@ strong{
     .section{
         grid-area: section;
         grid-template-columns: 200px auto 200px;
-    }
-    .main{
-           
-        background: $colorWhite-Lite;
-        grid-column: 2;        
-        grid-template-columns: repeat(2, 50%);
-        border-radius: 10px;
-        display: grid;
-        gap: 20px;
-        justify-content: center;
-        margin: auto;
-        max-width: 760px;
-        padding: 30px;
-        .title{
-            @include fontConfig(3.5rem, italic, bolder);
-            color: $colorBlue-Sky;
-            text-decoration: underline;
-        }
-        .intro{
-               
+        .main{
+            @include config();
+            background: $colorWhite-Lite;
+            grid-column: 2;        
+            grid-template-columns: repeat(2, 50%);
             border-radius: 10px;
-            box-shadow: $boxShadow;
-            p{
-                @include fontConfig(1.3rem, italic, bolder);
-                color:  $colorWhite-Dark;
-                margin: auto;
-                max-width: 500px;
-            }
-        }
-        .subtitle{
-               
-            @include fontConfig(2rem, italic, bolder);
-            color:  $colorWhite-Dark;
-            text-indent: 30px;
-        }
-        .div1{
-               
-            @include fontConfig(1.2rem, normal, normal);
-            color:  $colorWhite-Dark;
-            letter-spacing: 1px;
-            text-align: justify;
-            text-indent: 30px;
-        }
-        .div-img1{
-               
             display: grid;
             gap: 20px;
-            width: 100%;
-            border-radius: 5px;
-
-            .img-arpanet, .internet-connect{
-                background-color:  $colorWhite-Dark;
-                border-radius: 5px;
-                box-shadow: $boxShadow;
-                padding-bottom: 10px;
-                img{
-                    border-radius: 5px 5px 0 0;
-                    width: 100%;
-                }
-                .figcaption{
-                    color: $colorWhite;
-                    text-indent: 10px;
-                }
-
+            justify-content: center;
+            margin: auto;
+            max-width: 760px;
+            padding: 30px;
+            .title{
+                @include fontConfig(3.5rem, italic, bolder);
+                color: $colorBlue-Sky;
+                text-decoration: underline;
+                text-indent: 30px;
             }
-        }
-        .div2{
-               
-            p{
-                @include fontConfig(1.2rem, none, none);
+            .intro{
+                   
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                p{
+                    @include fontConfig(1.3rem, italic, bolder);
+                    color:  $colorWhite-Dark;
+                    margin: auto;
+                    max-width: 500px;
+                }
+            }
+            .subtitle{
+                   
+                @include fontConfig(2rem, italic, bolder);
+                color:  $colorWhite-Dark;
+                text-indent: 30px;
+            }
+            .div1{
+                   
+                @include fontConfig(1.2rem, normal, normal);
                 color:  $colorWhite-Dark;
                 letter-spacing: 1px;
                 text-align: justify;
                 text-indent: 30px;
             }
-        }
-        .smartphone{
-               
-            width: 100%;
-        }
-        .p1{
-               
-            @include fontConfig(1.5rem, italic, bolder);
-            align-content: center;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color:  $colorWhite-Dark;
-            display: grid;
-            padding: 10px;
-            text-align: justify;
-        }
-        .exemples{
-            @include fontConfig(1.5rem, italic, bolder);
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            margin: auto;
-            padding: 30px;
-            width: 430px;
-            h3{
-                color: $colorBlue-Sky;
-                margin-bottom: 30px;
-            }
-            i{
+            .div-img1{
                    
-                font-size: 3.5rem;
-                padding: 10px;
+                display: grid;
+                gap: 20px;
+                width: 100%;
+                border-radius: 5px;
+    
+                .img-arpanet, .internet-connect{
+                    background-color:  $colorWhite-Dark;
+                    border-radius: 5px;
+                    box-shadow: $boxShadow;
+                    padding-bottom: 10px;
+                    img{
+                        border-radius: 5px 5px 0 0;
+                        width: 100%;
+                    }
+                    .figcaption{
+                        color: $colorWhite;
+                        text-indent: 10px;
+                    }
+    
+                }
             }
-            li{
+            .div2{
                    
-                padding: 10px;
+                p{
+                    @include fontConfig(1.2rem, none, none);
+                    color:  $colorWhite-Dark;
+                    letter-spacing: 1px;
+                    text-align: justify;
+                    text-indent: 30px;
+                }
             }
-            .burger{
+            .smartphone{
+                img{
+                    border-radius: 5px;
+                    box-shadow: $boxShadow;
+                    width: 100%;
+                }
+            }
+            .p1{
                    
+                @include fontConfig(1.5rem, italic, bolder);
+                align-content: center;
                 border-radius: 10px;
                 box-shadow: $boxShadow;
-                color: $colorBrown;
-                display: flex;
-                margin: 30px 0;
-            }
-            .plane{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorWhite-Dark;
-                display: flex;
-                margin: 30px 0;
-
-            }
-            .locate{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorRed;
-                display: flex;
-                margin: 30px 0;
-
-            }
-            .cloud{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorYellow;
-                display: flex;
-                margin: 30px 0;
-
-            }
-            .bascket{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorRed;
-                display: flex;
-                margin: 30px 0;
-
-            }
-            .carrot{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: #f55236;
-                display: flex;
-                margin: 30px 0;
-            }
-            .icons{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorYellow;
-                display: flex;
-                margin: 30px 0;
-
-            }
-        }
-        .conclusion1{
-               
-            @include fontConfig(1.3rem, none, none);
-            color:  $colorWhite-Dark;
-            padding: 30px;
-            text-align: center;
-        }
-        .conclusion2{
-               
-            background-image: url(../Img/wolrd-connected.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            p{
-                @include fontConfig(1.6rem, italic, bolder);
-                background: $colorFade;
-                border-radius: 10px;
-                color: $colorWhite;
-                line-height: 1.7rem;
-                padding: 30px;
-                text-indent: 30px;
-            }
-        }
-        .p2{
-               
-            @include fontConfig(1.7rem, italic, bolder);
-            align-items: center;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color: $colorBlue-Sky;
-            display: grid;
-            letter-spacing: 1px;
-            text-indent: 30px;
-        }
-        .div3{
-               
-            p{
-                @include fontConfig(1.5rem, none, none);
                 color:  $colorWhite-Dark;
-                line-height: 1.7rem;
+                display: grid;
+                padding: 10px;
+                text-align: justify;
+            }
+            .exemples{
+                @include fontConfig(1.5rem, italic, bolder);
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                margin: auto;
+                padding: 30px;
+                width: 430px;
+                h3{
+                    color: $colorBlue-Sky;
+                    margin-bottom: 30px;
+                }
+                i{
+                       
+                    font-size: 3.5rem;
+                    padding: 10px;
+                }
+                li{
+                       
+                    padding: 10px;
+                }
+                .burger{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorBrown;
+                    display: flex;
+                    margin: 30px 0;
+                }
+                .plane{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorWhite-Dark;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .locate{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorRed;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .cloud{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorYellow;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .bascket{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorRed;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .carrot{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: #f55236;
+                    display: flex;
+                    margin: 30px 0;
+                }
+                .icons{
+                       
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorYellow;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+            }
+            .conclusion1{
+                   
+                @include fontConfig(1.3rem, none, none);
+                color:  $colorWhite-Dark;
+                padding: 30px;
+                text-align: center;
+            }
+            .conclusion2{
+                   
+                background-image: url(../Img/wolrd-connected.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                p{
+                    @include fontConfig(1.6rem, italic, bolder);
+                    background: $colorFade;
+                    border-radius: 10px;
+                    color: $colorWhite;
+                    line-height: 1.7rem;
+                    padding: 30px;
+                    text-indent: 30px;
+                }
+            }
+            .p2{
+                   
+                @include fontConfig(1.7rem, italic, bolder);
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorBlue-Sky;
+                display: grid;
+                letter-spacing: 1px;
                 text-indent: 30px;
             }
-        }
-        .teclado{
-               
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            display: grid;
-            align-self: center;
-            width: 100%;
-        }
-        
-        .blockquote{
-               
-            border-radius: 10px;
-            text-align: center;
-            p{
-                @include fontConfig(2rem, italic, bolder);
-                padding: 30px;
-            }
-        }
-        .mind1{
-            background-attachment: fixed;
-            background-image: url(../Img/web-socials.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 10px;
-            .a1{
-                background: $colorFade;
-                border-radius: 10px 10px 0 0;
-                color: $colorWhite;
-            }
-            .a2{
-                background: $colorFade;
-                color: $colorWhite;
-                border-radius: 0 0 10px 10px;
-            }
-        }
-        .mind2{
-            box-shadow: $boxShadow;
-            color: $colorBlue-Sky
-        }
-        .p3, .p4, .p5{
-               
-            @include fontConfig(1.5rem, none, none);
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color:  $colorWhite-Dark;
-            line-height: 1.9rem;
-            margin: 30px;
-            strong{
-                color: $colorBlue-Sky;
-            }
-        }
-        .finited{
-            align-items: center;
-            background-image: url(../Img/tablet.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            display: grid;
-            text-align: center;
-            p{
+            .div3{
                    
-                @include fontConfig(2rem, italic, bolder);
-                background: $colorFade;
-                color: $colorWhite;
-                padding: 50px;
+                p{
+                    @include fontConfig(1.5rem, none, none);
+                    color:  $colorWhite-Dark;
+                    line-height: 1.7rem;
+                    text-indent: 30px;
+                }
             }
-            .a3{
-                border-radius: 10px 10px 0 0;
+            .teclado{
+                   
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                display: grid;
+                align-self: center;
+                width: 100%;
             }
-            .a4{
-                border-radius: 0 0 10px 10px;
+            
+            .blockquote{
+                   
+                border-radius: 10px;
+                text-align: center;
+                p{
+                    @include fontConfig(2rem, italic, bolder);
+                    padding: 30px;
+                }
+            }
+            .mind1{
+                background-attachment: fixed;
+                background-image: url(../Img/web-socials.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+                .a1{
+                    background: $colorFade;
+                    border-radius: 10px 10px 0 0;
+                    color: $colorWhite;
+                }
+                .a2{
+                    background: $colorFade;
+                    color: $colorWhite;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+            .mind2{
+                box-shadow: $boxShadow;
+                color: $colorBlue-Sky
+            }
+            .p3, .p4, .p5{
+                   
+                @include fontConfig(1.5rem, none, none);
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color:  $colorWhite-Dark;
+                line-height: 1.9rem;
+                margin: 30px;
+                strong{
+                    color: $colorBlue-Sky;
+                }
+            }
+            .finited{
+                align-items: center;
+                background-image: url(../Img/tablet.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 10px;
+                display: grid;
+                text-align: center;
+                p{
+                       
+                    @include fontConfig(2rem, italic, bolder);
+                    background: $colorFade;
+                    color: $colorWhite;
+                    padding: 50px;
+                }
+                .a3{
+                    border-radius: 10px 10px 0 0;
+                }
+                .a4{
+                    border-radius: 0 0 10px 10px;
+                }
             }
         }
     }
@@ -460,6 +465,39 @@ strong{
             a{
                 color:  $colorWhite-Dark;
 
+            }
+        }
+    }
+    @media(max-width:750px){
+        .header{
+            padding: 25px;
+            .logo{
+                max-width: 140px;
+                // min-width: auto;
+            }
+            .nav{
+                ul{
+                    display: flex;
+                    li{
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+        .section{
+            grid-template-columns: 100%;
+            .main{
+                grid-template-columns: min-content;
+                max-width: 70%;
+                padding: 0;
+                .title{
+                    font-size: 2.8rem;
+                }
+                .intro{
+                    p{
+                        font-size: 1.2rem;
+                    }
+                }
             }
         }
     }
