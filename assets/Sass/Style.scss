@@ -54,7 +54,7 @@ ul, li {
     list-style: none;
 }
 strong{
-    color: $colorWhite-Dark;
+    color: $colorBlue-Sky;
 }
 
 ::-webkit-scrollbar{
@@ -89,7 +89,7 @@ strong{
     display: grid;
     grid-template-areas: 
     "header header header"
-    "section section section"
+    "main main main"
     "jobs jobs jobs"
     "footer footer footer"
     ;
@@ -119,304 +119,299 @@ strong{
             }
         }
     }
-    .section{
-        grid-area: section;
-        grid-template-columns: 200px auto 200px;
-        .main{
-            @include config();
-            background: $colorWhite-Lite;
-            grid-column: 2;        
-            grid-template-columns: repeat(2, 50%);
+    .main{
+        grid-area: main;
+        // grid-template-columns: 200px auto 200px;
+        @include config();
+        grid-template-columns: repeat(2, 50%);
+        border-radius: 10px;
+        display: grid;
+        gap: 20px;
+        justify-content: center;
+        margin: auto;
+        max-width: 760px;
+        padding: 30px;
+        .title{
+            @include fontConfig(3.5rem, italic, bolder);
+            color: $colorBlue-Sky;
+            text-decoration: underline;
+            text-indent: 30px;
+        }
+        .intro{
+                
             border-radius: 10px;
+            box-shadow: $boxShadow;
+            p{
+                @include fontConfig(1.3rem, italic, bolder);
+                color:  $colorWhite-Lite;
+                margin: auto;
+                max-width: 500px;
+                text-indent: 30px
+            }
+        }
+        .subtitle{
+                
+            @include fontConfig(2rem, italic, bolder);
+            color:  $colorBlue-Sky;
+            text-indent: 30px;
+        }
+        .div1{
+                
+            @include fontConfig(1.3rem, normal, normal);
+            color:  $colorWhite-Lite;
+            letter-spacing: 1px;
+            text-align: justify;
+            text-indent: 30px;
+        }
+        .div-img1{
+            align-items: first baseline;
             display: grid;
             gap: 20px;
-            justify-content: center;
-            margin: auto;
-            max-width: 760px;
-            padding: 30px;
-            .title{
-                @include fontConfig(3.5rem, italic, bolder);
-                color: $colorBlue-Sky;
-                text-decoration: underline;
-                text-indent: 30px;
-            }
-            .intro{
-                   
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                p{
-                    @include fontConfig(1.3rem, italic, bolder);
-                    color:  $colorWhite-Dark;
-                    margin: auto;
-                    max-width: 500px;
-                }
-            }
-            .subtitle{
-                   
-                @include fontConfig(2rem, italic, bolder);
-                color:  $colorWhite-Dark;
-                text-indent: 30px;
-            }
-            .div1{
-                   
-                @include fontConfig(1.2rem, normal, normal);
-                color:  $colorWhite-Dark;
-                letter-spacing: 1px;
-                text-align: justify;
-                text-indent: 30px;
-            }
-            .div-img1{
-                   
-                display: grid;
-                gap: 20px;
-                width: 100%;
+            width: 100%;
+            border-radius: 5px;
+
+            .img-arpanet, .internet-connect{
+                background-color:  $colorBlue-Sky;
                 border-radius: 5px;
-    
-                .img-arpanet, .internet-connect{
-                    background-color:  $colorWhite-Dark;
-                    border-radius: 5px;
-                    box-shadow: $boxShadow;
-                    padding-bottom: 10px;
-                    img{
-                        border-radius: 5px 5px 0 0;
-                        width: 100%;
-                    }
-                    .figcaption{
-                        color: $colorWhite;
-                        text-indent: 10px;
-                    }
-    
-                }
-            }
-            .div2{
-                   
-                p{
-                    @include fontConfig(1.2rem, none, none);
-                    color:  $colorWhite-Dark;
-                    letter-spacing: 1px;
-                    text-align: justify;
-                    text-indent: 30px;
-                }
-            }
-            .smartphone{
+                box-shadow: $boxShadow;
+                padding-bottom: 1px;
                 img{
-                    border-radius: 5px;
-                    box-shadow: $boxShadow;
+                    border-radius: 5px 5px 0 0;
                     width: 100%;
                 }
-            }
-            .p1{
-                   
-                @include fontConfig(1.5rem, italic, bolder);
-                align-content: center;
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color:  $colorWhite-Dark;
-                display: grid;
-                padding: 10px;
-                text-align: justify;
-            }
-            .exemples{
-                @include fontConfig(1.5rem, italic, bolder);
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                margin: auto;
-                padding: 30px;
-                width: 430px;
-                h3{
-                    color: $colorBlue-Sky;
-                    margin-bottom: 30px;
-                }
-                i{
-                       
-                    font-size: 3.5rem;
-                    padding: 10px;
-                }
-                li{
-                       
-                    padding: 10px;
-                }
-                .burger{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorBrown;
-                    display: flex;
-                    margin: 30px 0;
-                }
-                .plane{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorWhite-Dark;
-                    display: flex;
-                    margin: 30px 0;
-    
-                }
-                .locate{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorRed;
-                    display: flex;
-                    margin: 30px 0;
-    
-                }
-                .cloud{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorYellow;
-                    display: flex;
-                    margin: 30px 0;
-    
-                }
-                .bascket{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorRed;
-                    display: flex;
-                    margin: 30px 0;
-    
-                }
-                .carrot{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: #f55236;
-                    display: flex;
-                    margin: 30px 0;
-                }
-                .icons{
-                       
-                    border-radius: 10px;
-                    box-shadow: $boxShadow;
-                    color: $colorYellow;
-                    display: flex;
-                    margin: 30px 0;
-    
-                }
-            }
-            .conclusion1{
-                   
-                @include fontConfig(1.3rem, none, none);
-                color:  $colorWhite-Dark;
-                padding: 30px;
-                text-align: center;
-            }
-            .conclusion2{
-                   
-                background-image: url(../Img/wolrd-connected.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                p{
-                    @include fontConfig(1.6rem, italic, bolder);
-                    background: $colorFade;
-                    border-radius: 10px;
+                .figcaption{
                     color: $colorWhite;
-                    line-height: 1.7rem;
-                    padding: 30px;
-                    text-indent: 30px;
+                    text-indent: 10px;
                 }
+
             }
-            .p2{
-                   
-                @include fontConfig(1.7rem, italic, bolder);
-                align-items: center;
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorBlue-Sky;
-                display: grid;
+        }
+        .div2{
+                
+            p{
+                @include fontConfig(1.2rem, none, none);
+                color:  $colorWhite-Lite;
                 letter-spacing: 1px;
+                text-align: justify;
                 text-indent: 30px;
             }
-            .div3{
-                   
-                p{
-                    @include fontConfig(1.5rem, none, none);
-                    color:  $colorWhite-Dark;
-                    line-height: 1.7rem;
-                    text-indent: 30px;
-                }
-            }
-            .teclado{
-                   
-                border-radius: 10px;
+        }
+        .smartphone{
+            img{
+                border-radius: 5px;
                 box-shadow: $boxShadow;
-                display: grid;
-                align-self: center;
                 width: 100%;
             }
-            
-            .blockquote{
-                   
-                border-radius: 10px;
-                text-align: center;
-                p{
-                    @include fontConfig(2rem, italic, bolder);
-                    padding: 30px;
-                }
+        }
+        .p1{
+                
+            @include fontConfig(1.5rem, italic, bolder);
+            align-content: center;
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            color:  $colorWhite-Dark;
+            display: grid;
+            padding: 10px;
+            text-align: justify;
+        }
+        .exemples{
+            @include fontConfig(1.5rem, italic, bolder);
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            margin: auto;
+            padding: 30px;
+            width: 430px;
+            h3{
+                color: $colorBlue-Sky;
+                margin-bottom: 30px;
             }
-            .mind1{
-                background-attachment: fixed;
-                background-image: url(../Img/web-socials.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                border-radius: 10px;
-                .a1{
-                    background: $colorFade;
-                    border-radius: 10px 10px 0 0;
-                    color: $colorWhite;
-                }
-                .a2{
-                    background: $colorFade;
-                    color: $colorWhite;
-                    border-radius: 0 0 10px 10px;
-                }
+            i{
+                    
+                font-size: 3.5rem;
+                padding: 10px;
             }
-            .mind2{
+            li{
+                    
+                padding: 10px;
+            }
+            .burger{
+                    
+                border-radius: 10px;
                 box-shadow: $boxShadow;
-                color: $colorBlue-Sky
+                color: $colorBrown;
+                display: flex;
+                margin: 30px 0;
             }
-            .p3, .p4, .p5{
-                   
+            .plane{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorWhite-Dark;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .locate{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorRed;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .cloud{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorYellow;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .bascket{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorRed;
+                display: flex;
+                margin: 30px 0;
+
+            }
+            .carrot{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: #f55236;
+                display: flex;
+                margin: 30px 0;
+            }
+            .icons{
+                    
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorYellow;
+                display: flex;
+                margin: 30px 0;
+
+            }
+        }
+        .conclusion1{
+                
+            @include fontConfig(1.3rem, italic, bolder);
+            color:  $colorWhite-Lite;
+            padding: 30px;
+            text-align: center;
+        }
+        .conclusion2{
+                
+            background-image: url(../Img/wolrd-connected.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            p{
+                @include fontConfig(1.6rem, italic, bolder);
+                background: $colorFade;
+                border-radius: 10px;
+                color: $colorWhite;
+                line-height: 1.7rem;
+                padding: 30px;
+                text-indent: 30px;
+            }
+        }
+        .p2{
+                
+            @include fontConfig(1.7rem, italic, bolder);
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            color: $colorBlue-Sky;
+            display: grid;
+            letter-spacing: 1px;
+            text-indent: 30px;
+        }
+        .div3{
+                
+            p{
                 @include fontConfig(1.5rem, none, none);
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color:  $colorWhite-Dark;
-                line-height: 1.9rem;
-                margin: 30px;
-                strong{
-                    color: $colorBlue-Sky;
-                }
+                color:  $colorWhite-Lite;
+                line-height: 1.7rem;
+                text-indent: 30px;
             }
-            .finited{
-                align-items: center;
-                background-image: url(../Img/tablet.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                border-radius: 10px;
-                display: grid;
-                text-align: center;
-                p{
-                       
-                    @include fontConfig(2rem, italic, bolder);
-                    background: $colorFade;
-                    color: $colorWhite;
-                    padding: 50px;
-                }
-                .a3{
-                    border-radius: 10px 10px 0 0;
-                }
-                .a4{
-                    border-radius: 0 0 10px 10px;
-                }
+        }
+        .teclado{
+                
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            display: grid;
+            align-self: center;
+            width: 100%;
+        }
+        
+        .blockquote{
+                
+            border-radius: 10px;
+            text-align: center;
+            p{
+                @include fontConfig(2rem, italic, bolder);
+                padding: 30px;
+            }
+        }
+        .mind1{
+            background-attachment: fixed;
+            background-image: url(../Img/web-socials.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+            .a1{
+                background: $colorFade;
+                border-radius: 10px 10px 0 0;
+                color: $colorWhite;
+            }
+            .a2{
+                background: $colorFade;
+                color: $colorWhite;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+        .mind2{
+            box-shadow: $boxShadow;
+            color: $colorBlue-Sky
+        }
+        .p3, .p4, .p5{
+                
+            @include fontConfig(1.5rem, none, none);
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+            color:  $colorWhite-Lite;
+            line-height: 1.9rem;
+            margin: 30px;
+        }
+        .finited{
+            align-items: center;
+            background-image: url(../Img/tablet.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            display: grid;
+            text-align: center;
+            p{
+                    
+                @include fontConfig(2rem, italic, bolder);
+                background: $colorFade;
+                color: $colorWhite;
+                padding: 50px;
+            }
+            .a3{
+                border-radius: 10px 10px 0 0;
+            }
+            .a4{
+                border-radius: 0 0 10px 10px;
             }
         }
     }
+    
 
     .jobs{
         margin: auto;
@@ -468,37 +463,360 @@ strong{
             }
         }
     }
-    @media(max-width:750px){
+}    
+@media(max-width:750px){
+    
+
+    .container{
+        display: block;
+        // display: grid;
+        // grid-template-areas: 
+        // "header header"
+        // "main main"
+        // "jobs jobs"
+        // "footer footer"
+        // ;
         .header{
-            padding: 25px;
+            align-items: center;
+            background: linear-gradient(to bottom, $colorBlue, transparent);
+            display: flex;
+            // justify-content: space-between;
+            padding: 30px;
             .logo{
-                max-width: 140px;
+                max-width: 150px;
                 // min-width: auto;
             }
             .nav{
-                ul{
+                display: none;
+                // ul{
+                //     display: flex;
+                //     li{
+                //         margin: 0 20px;
+                //         a{
+                //             @include fontConfig(1.3rem, italic, bold);
+                //             color: $colorWhite;
+                            
+                            
+                //         }
+                //     }
+                // }
+            }
+        }
+
+        .main{
+            @include config();
+            // display: block;
+            // grid-template-columns: repeat(2, 50%);
+            // border-radius: 10px;
+            display: grid;
+            // gap: 20px;
+            // justify-content: center;
+            // margin: auto;
+            // max-width: 400px;
+            padding: 30px;
+            .title{
+                @include fontConfig(2.8rem, italic, bolder);
+                color: $colorBlue-Sky;
+                text-decoration: underline;
+                text-indent: 30px;
+            }
+            .intro{
+                
+                border-radius: 10px;
+                // box-shadow: $boxShadow;
+                p{
+                    @include fontConfig(1.2rem, italic, bolder);
+                    color:  $colorWhite-Lite;
+                    margin: auto;
+                    max-width: 80%;
+                }
+            }
+            .subtitle{
+                
+                @include fontConfig(2rem, italic, bolder);
+                text-indent: 30px;
+            }
+            .div1{
+                
+                @include fontConfig(1rem, normal, normal);
+                color:  $colorWhite-Lite;
+                // letter-spacing: 1px;
+                text-align: justify;
+                text-indent: 30px;
+            }
+            .div-img1{
+                align-content: center;
+                display: grid;
+                gap: 20px;
+                width: 100%;
+                border-radius: 5px;
+    
+                .img-arpanet, .internet-connect{
+                    background-color:  $colorWhite-Dark;
+                    border-radius: 5px;
+                    box-shadow: $boxShadow;
+                    padding-bottom: 10px;
+                }
+            }
+            .div2{
+                
+                p{
+                    @include fontConfig(1rem, none, none);
+                    color:  $colorWhite-Lite;
+                    // letter-spacing: 1px;
+                    // text-align: justify;
+                    // text-indent: 30px;
+                }
+            }
+            .smartphone{
+                align-content: center;
+                display: grid;
+                img{
+                    border-radius: 5px;
+                    box-shadow: $boxShadow;
+                    width: 100%;
+                }
+            }
+            .p1{
+                
+                @include fontConfig(1.2rem, italic, bolder);
+            }
+            .exemples{
+                @include fontConfig(1.5rem, italic, bolder);
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                margin: auto;
+                padding: 30px;
+                width: 430px;
+                h3{
+                    color: $colorBlue-Sky;
+                    margin-bottom: 30px;
+                }
+                i{
+                    
+                    font-size: 3.5rem;
+                    padding: 10px;
+                }
+                li{
+                    
+                    padding: 10px;
+                }
+                .burger{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorBrown;
                     display: flex;
-                    li{
-                        margin: 0 10px;
-                    }
+                    margin: 30px 0;
+                }
+                .plane{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorWhite-Dark;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .locate{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorRed;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .cloud{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorYellow;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .bascket{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorRed;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+                .carrot{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: #f55236;
+                    display: flex;
+                    margin: 30px 0;
+                }
+                .icons{
+                    
+                    border-radius: 10px;
+                    box-shadow: $boxShadow;
+                    color: $colorYellow;
+                    display: flex;
+                    margin: 30px 0;
+    
+                }
+            }
+            .conclusion1{
+                
+                @include fontConfig(1.2rem, italic, bolder);
+                padding: 30px;
+                text-align: center;
+            }
+            .conclusion2{
+                
+                // background-image: url(../Img/wolrd-connected.jpg);
+                // background-size: cover;
+                // background-repeat: no-repeat;
+                // border-radius: 10px;
+                // box-shadow: $boxShadow;
+                grid-column: 1 / -1;
+                p{
+                    @include fontConfig(1.6rem, italic, bolder);
+                    background: $colorFade;
+                    border-radius: 10px;
+                    color: $colorWhite;
+                    line-height: 1.7rem;
+                    padding: 30px;
+                    text-indent: 30px;
+                }
+            }
+            .p2{
+                
+                @include fontConfig(1.7rem, italic, bolder);
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorBlue-Sky;
+                display: grid;
+                letter-spacing: 1px;
+                text-indent: 30px;
+            }
+            .div3{
+                
+                p{
+                    @include fontConfig(1.1rem, none, none);
+                }
+            }
+            .teclado{
+                grid-column: 1 / -1 ;
+                // border-radius: 10px;
+                // box-shadow: $boxShadow;
+                // display: grid;
+                // align-self: center;
+                // width: 100%;
+            }
+            
+            .blockquote{
+                
+                border-radius: 10px;
+                text-align: center;
+                p{
+                    @include fontConfig(2rem, italic, bolder);
+                    padding: 30px;
+                }
+            }
+            .mind1{
+                background-attachment: local;
+                background-image: url(../Img/web-socials.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+                .a1{
+                    background: $colorFade;
+                    border-radius: 10px 10px 0 0;
+                    color: $colorWhite;
+                }
+                .a2{
+                    background: $colorFade;
+                    color: $colorWhite;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+            .mind2{
+                box-shadow: $boxShadow;
+                color: $colorBlue-Sky
+            }
+            .p3, .p4, .p5{
+                
+                @include fontConfig(1.2rem, italic, bolder);
+            }
+            .finited{
+                background-position: right;
+                p{
+                    
+                    @include fontConfig(2rem, italic, bolder);
+                    background: $colorFade;
+                    color: $colorWhite;
+                    padding: 50px;
+                }
+                .a3{
+                    border-radius: 10px 10px 0 0;
+                }
+                .a4{
+                    border-radius: 0 0 10px 10px;
                 }
             }
         }
-        .section{
-            grid-template-columns: 100%;
-            .main{
-                grid-template-columns: min-content;
-                max-width: 70%;
-                padding: 0;
-                .title{
-                    font-size: 2.8rem;
+        
+
+        .jobs{
+            overflow: hidden;
+            // margin: auto;
+            // max-width: 760px;
+            // padding: 20px;
+            // h3{
+            //     @include fontConfig(2.5rem, italic, bolder);
+            //     color: $colorBlue-Sky;
+            //     padding: 30px 0;
+            //     text-align: center;
+            // }
+            // grid-area: jobs;
+            // ul{
+            //     display: grid;
+            //     gap: 20px;
+            //     // grid-template-columns: repeat(auto-fit, auto);
+            //     grid-auto-flow: column;
+            //     justify-items: center;
+            //     margin: 0 auto;
+            //     width: auto;
+            //     li{
+            //         img{
+            //             box-shadow: $boxShadow;
+            //             width: 100px;
+            //         }
+            //     }
+            // }
+        }
+        .footer{
+            background: linear-gradient(to top, $colorWhite-Dark, transparent);
+            grid-area: footer;
+            height: auto;
+            padding: 50px 30px 0 30px;
+            text-align: center;
+            width: 100%;
+            .contact{
+                display: flex;
+                @include fontConfig(1.3rem, italic, lighter);
+                justify-content: space-evenly;
+                a{
+                    color: $colorWhite;
                 }
-                .intro{
-                    p{
-                        font-size: 1.2rem;
-                    }
+            }
+            .propert{
+                @include fontConfig(2rem, italic, bolder);
+                a{
+                    color:  $colorWhite-Dark;
+
                 }
             }
         }
-    }
-}    
+    }    
+
+}
