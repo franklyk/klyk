@@ -84,7 +84,6 @@ strong{
 .col-wide{
     grid-column: 1 / -1;
 }
-
 .container{
     display: grid;
     grid-template-areas: 
@@ -112,15 +111,12 @@ strong{
                     a{
                         @include fontConfig(1.3rem, italic, bold);
                         color: $colorWhite;
-                        
-                        
                     }
                 }
             }
         }
     }
     .main{
-        @include config();
         grid-area: main;
         grid-template-columns: repeat(2, 50%);
         border-radius: 10px;
@@ -128,7 +124,7 @@ strong{
         gap: 20px;
         justify-content: center;
         margin: auto;
-        max-width: 860px;
+        max-width: 960px;
         padding: 30px;
         .title{
             @include fontConfig(3.5rem, italic, bolder);
@@ -137,14 +133,14 @@ strong{
             text-indent: 30px;
         }
         .intro{
-                
             border-radius: 10px;
             box-shadow: $boxShadow;
             p{
                 @include fontConfig(1.3rem, italic, bolder);
                 color:  $colorWhite-Lite;
                 margin: auto;
-                max-width: 500px;
+                max-width: 600px;
+                padding: 30px 0;
                 text-indent: 30px
             }
         }
@@ -154,34 +150,36 @@ strong{
             color:  $colorBlue-Sky;
             text-indent: 30px;
         }
-        .div1{
-                
+        .div1{       
             @include fontConfig(1.3rem, normal, normal);
             color:  $colorWhite-Lite;
             letter-spacing: 1px;
             text-align: justify;
             text-indent: 30px;
         }
-        .div-img1{
-            align-items: first baseline;
-            display: grid;
-            gap: 20px;
-            width: 100%;
-            border-radius: 5px;
-
-            .img-arpanet, .internet-connect{
-                background-color:  $colorWhite-Dark;                border-radius: 5px;
-                box-shadow: $boxShadow;
-                padding-bottom: 1px;
-                img{
-                    border-radius: 5px 5px 0 0;
-                    width: 100%;
-                }
-                .figcaption{
-                    color: $colorWhite;
-                    text-indent: 10px;
-                }
-
+        .pb{
+            grid-column: 1;
+        }
+        .pc{
+            grid-column: 1;
+        }
+        .pd{
+            grid-column: 2;
+            grid-row: 5;
+        }
+        .img-arpanet, .internet-connect{
+            align-self: end;
+            background-color:  $colorWhite-Dark;                border-radius: 5px;
+            box-shadow: $boxShadow;
+            margin-bottom: 20px;
+            padding-bottom: 1px;
+            img{
+                border-radius: 5px 5px 0 0;
+                width: 100%;
+            }
+            .figcaption{
+                color: $colorWhite;
+                text-indent: 10px;
             }
         }
         .div2{
@@ -202,7 +200,6 @@ strong{
             }
         }
         .p1{
-                
             @include fontConfig(1.5rem, italic, bolder);
             align-content: center;
             border-radius: 10px;
@@ -412,8 +409,8 @@ strong{
     .jobs{
         grid-area: jobs;
         margin: auto;
-        max-width: 760px;
-        padding: 20px;
+        max-width: 960px;
+        padding: 0 20px;
         h3{
             @include fontConfig(2.5rem, italic, bolder);
             color: $colorBlue-Sky;
@@ -422,18 +419,25 @@ strong{
         }
         ul{
             display: flex;
-            // display: grid;
-            // gap: 20px;
-            // grid-template-columns: repeat(auto-fit, auto);
-            // grid-auto-flow: column;
-            // justify-items: center;
+            flex-wrap: wrap;
             margin: 0 auto;
             width: auto;
             li{
+                align-items: center;
+                display: flex;
+                justify-content: center;
                 margin: 0 auto;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                padding: 5px;
+                max-width: 16.6%;
+                min-width: 100px;
                 img{
-                    box-shadow: $boxShadow;
-                    width: 100px;
+                    transition: .3s ease-in-out;
+                    width: 100%;
+                    &:hover{
+                        width: 95%;
+                    }
                 }
             }
         }
@@ -447,17 +451,25 @@ strong{
         width: 100%;
         .contact{
             display: flex;
-            @include fontConfig(1.3rem, italic, lighter);
+            @include fontConfig(1.5rem, italic, lighter);
             justify-content: space-evenly;
             a{
-                color: $colorWhite;
+                @include config();
+                background: $colorWhite-Lite;
+                border-radius: 5px;
+                color: $colorWhite-Dark;
+                padding: 6px 10px;
+                // padding: 6px 10px;
+                &:hover{
+                    background: $colorWhite-Dark;
+                    color: $colorWhite;
+                }
             }
         }
         .propert{
             @include fontConfig(2rem, italic, bolder);
             a{
                 color:  $colorWhite-Dark;
-
             }
         }
     }
@@ -485,7 +497,8 @@ strong{
             .intro{
                 p{
                     @include fontConfig(1.3rem, italic, bolder);
-
+                    padding: 20px 0;
+                    text-indent: 0;
                 }
             }
             .subtitle{
@@ -558,13 +571,121 @@ strong{
                 background-position: right;
             }
         }
-        .jobs{
-            @include config();
-            ul{
-                grid-template-columns: 100px 100px;
-                @include config();
-                li{
-                    @include config();
+    }    
+}
+@media(max-width:500px){
+    .container{
+        display: block;
+        .header{
+            align-items: center;
+            background: linear-gradient(to bottom, $colorBlue, transparent);
+            display: flex;
+            padding: 30px;
+            .logo{
+                max-width: 150px;
+            }
+            .nav{
+                display: none;
+            }
+        }
+        .main{
+            display: block;
+            width: 100%;
+            .title{
+                @include fontConfig(2.8rem, italic, bolder);
+            }
+            .intro{
+                p{
+                    @include fontConfig(1.3rem, italic, bolder);
+                }
+            }
+            .subtitle{
+                @include fontConfig(2rem, italic, bolder);
+            }
+            .div1{
+                @include fontConfig(1.2rem, normal, normal);
+                line-height: 1.5rem;
+            }
+            .div-img1{
+                align-items: center;
+                .img-arpanet, .internet-connect{
+                    padding-bottom: 10px;
+                }
+            }
+            .div2{
+                p{
+                    @include fontConfig(1rem, none, none);
+                    font-size: 1.2rem;
+                }
+            }
+            .smartphone{
+                align-content: center;
+                display: grid;
+                margin: 30px 0;
+                img{
+                    border-radius: 5px;
+                    box-shadow: $boxShadow;
+                    width: 100%;
+                }
+            }
+            .p1{
+                @include fontConfig(1.2rem, italic, bolder);
+            }
+            .exemples{
+                @include fontConfig(1.3rem, italic, bolder);
+                width: 100%; 
+            }
+            .conclusion2{
+                grid-column: 1 / -1;
+                margin: 30px 0;
+                p{  
+                    line-height: 1.8rem;
+                }
+            }
+            .p2{
+                @include fontConfig(1.7rem, italic, bolder);
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: $boxShadow;
+                color: $colorBlue-Sky;
+                display: grid;
+                letter-spacing: 1px;
+                margin: 30px 0;
+                text-indent: 30px;
+            }
+            .div3{   
+                p{
+                    @include fontConfig(1.3rem, none, none);
+                    margin: 30px 0;
+                    text-align: justify;
+                }
+            }
+            .teclado{
+                display: none;
+            }
+            .mind1{
+                background-attachment: local;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .p3, .p4, .p5{    
+                @include fontConfig(1.3rem, italic, bolder);
+            }
+            .finited{
+                background-position: right;
+            }
+        }
+        .footer{
+            padding: 20px 30px;
+            .contact{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                a{
+                    @include fontConfig(1.5rem, italic, lighter);
+                    margin: 5px auto;
+                    padding: 6px 10px;
+                    width: 75%;
                 }
             }
         }
