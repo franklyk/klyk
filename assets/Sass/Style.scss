@@ -114,6 +114,34 @@ strong{
                 }
             }
         }
+        .menu-mobile{
+            @include config();
+            cursor: pointer;
+            height: 35px;
+            transform-origin: center;
+            width: 35px;
+            .line{
+                background: $colorWhite;
+                display: block;
+                height: 3px;
+                margin: 6px auto;
+                width: 35px;
+                transition: 0.5s ease-in-out;
+            }
+            &:hover{
+                :nth-child(1){
+                    background: $colorRed;
+                    transform: translateY(9px) rotate(225deg);
+                }
+                :nth-child(2){
+                    width: 0;
+                }
+                :nth-child(3){
+                    background: $colorRed;
+                    transform: translateY(-9px) rotate(-225deg);
+                }
+            }
+        }
     }
     .main{
         grid-area: main;

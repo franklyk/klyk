@@ -90,6 +90,32 @@ strong {
   text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
   color: #fff;
 }
+.container .header .menu-mobile {
+  border: 1px solid black;
+  cursor: pointer;
+  height: 35px;
+  transform-origin: center;
+  width: 35px;
+}
+.container .header .menu-mobile .line {
+  background: #fff;
+  display: block;
+  height: 3px;
+  margin: 6px auto;
+  width: 35px;
+  transition: 0.5s ease-in-out;
+}
+.container .header .menu-mobile:hover :nth-child(1) {
+  background: #ce0a0a;
+  transform: translateY(9px) rotate(225deg);
+}
+.container .header .menu-mobile:hover :nth-child(2) {
+  width: 0;
+}
+.container .header .menu-mobile:hover :nth-child(3) {
+  background: #ce0a0a;
+  transform: translateY(-9px) rotate(-225deg);
+}
 .container .main {
   grid-area: main;
   grid-template-columns: repeat(2, 50%);
