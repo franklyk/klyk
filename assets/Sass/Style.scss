@@ -1,85 +1,6 @@
-$colorBlue: #000050e1;
-$colorBlue-Sky: #8a8aff3d;
-$colorBlueDark: #000052f6;
-$colorBrown: #861400;
-$colorFade: #0000009d;
-$colorRed: #ce0a0a;
-$colorWhite: #fff;
-$colorWhite-Lite: #d4d5d659;
-$colorWhite-Dark: #000000b9;
-$colorYellow: #9191179a;
+@import "Libs/index";
 
-$textShadow: 0.75px 0.75px 1px #000000b0;
 
-$shadow-hover: 3px 3px 15px #0000004d;
-$boxShadow: 3px 3px 3px 3px  #44434310;
-
-@mixin config(){
-    border: 1px solid black;
-}
-
-@mixin backgroundConfig(){
-    background: #aca9a965;
-    backdrop-filter: blur(15px);
-}
-
-@mixin fontConfig($size, $style, $weight){
-    font-size: $size;
-    font-style: $style;
-    font-weight: $weight;
-    text-shadow: $textShadow;
-}
-img{
-    width: 100%;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html{
-    height: 100vh;
-    max-width: 100vw;
-}
-body{
-    height: 100%;
-    max-width: 100%;
-}
-a{
-    text-decoration: none;
-}
-ul, li {
-    list-style: none;
-}
-strong{
-    color: $colorBlue-Sky;
-}
-
-::-webkit-scrollbar{
-    background: transparent;
-    opacity: 0;
-    width: 6px;
-}
-::-webkit-scrollbar-track{
-    background: transparent;
-    opacity: 0;
-    width: 6px !important;
-    &:hover{
-        background: $colorWhite-Lite;
-    }
-}
-::-webkit-scrollbar-thumb{
-    background: $colorWhite-Lite;
-    border: 1px solid $colorBlueDark;
-    border-radius: 1px;
-    cursor: pointer;
-    opacity: 0;
-    width: 6px;
-    &:hover{
-        background: $colorWhite-Dark;
-    }
-}
 .col-wide{
     grid-column: 1 / -1;
 }
@@ -91,44 +12,65 @@ strong{
     "jobs jobs jobs"
     "footer footer footer"
     ;
+    height: 100%;
+    width: 100%;
     .header{
+        @include boxShadow();
         align-items: center;
-        background: linear-gradient(to bottom, $colorBlue, transparent);
+        background-image: url(../Img/teclado.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
         display: flex;
         grid-area: header;
+        height: 100vh;
         justify-content: space-between;
         padding: 30px;
+        position: relative;
+        width: 100%;
         .logo{
-            max-width: 150px;
-            min-width: auto;
+            .logo_svg{
+                display: none;
+            }
+            width: 350px;
+            position: absolute;
+            top: 48%;
+            p{
+                @include fontConfig(1.1rem, lighter, $colorWhite)
+            }
         }
         .nav{
+            bottom: 100px;
+            height: 250px;
+            position: absolute;
+            right: 0;
             ul{
+                align-items: end;
                 display: flex;
-                li{
-                    margin: 0 20px;
+                flex-direction: column-reverse;
+                justify-content: space-between;
+                li{ 
+                    margin: 10px 40px;
                     a{
-                        @include fontConfig(1.3rem, italic, bold);
-                        color: $colorWhite;
+                        @include fontConfig(1.3rem, bolder, $colorWhite);
                     }
                 }
             }
         }
         .menu-mobile{
-            @include config();
             cursor: pointer;
+            display: none;
             height: 35px;
             transform-origin: center;
             width: 35px;
             .line{
-                background: $colorWhite;
+                background: $sabio;
                 display: block;
                 height: 3px;
                 margin: 6px auto;
                 width: 35px;
                 transition: 0.5s ease-in-out;
             }
-            &:hover{
+            &.active{
                 :nth-child(1){
                     background: $colorRed;
                     transform: translateY(9px) rotate(225deg);
@@ -146,62 +88,85 @@ strong{
     .main{
         grid-area: main;
         grid-template-columns: repeat(2, 50%);
-        border-radius: 10px;
+        border-radius: 3px;
         display: grid;
         gap: 20px;
         justify-content: center;
-        margin: auto;
-        max-width: 960px;
+        margin: 45px auto;
+        max-width: 1000px;
         padding: 30px;
+        .div1{
+            @include fontConfig(1.3rem, bolder, $blueFederal);
+            align-content: start; 
+            display: grid;
+            grid-column: 1;
+            padding:  0 10px;
+            h2{
+                @include fontConfig(1.8rem, bolder, $caribe);
+                padding-bottom: 10px
+            }
+            p{
+                line-height: 1.8rem;
+                margin: 10px 0;
+                text-align: justify;
+                text-indent: 30px;
+            }
+        }
+        .div2{
+            @include fontConfig(1.3rem, bolder, $blueFederal);
+            align-content: start; 
+            display: grid;
+            grid-column: 2;
+            padding: 0 10px;
+            h2{
+                @include fontConfig(1.8rem, bolder, $caribe);
+                padding-bottom: 10px
+            }
+            p{
+                line-height: 1.8rem;
+                margin: 10px 0;
+                text-align: justify;
+                text-indent: 30px;
+            }
+        }
         .title{
-            @include fontConfig(3.5rem, italic, bolder);
-            color: $colorBlue-Sky;
+            @include fontConfig(3.5rem, bolder, $caribe);
             text-decoration: underline;
             text-indent: 30px;
         }
         .intro{
-            border-radius: 10px;
+            border-radius: 3px;
             box-shadow: $boxShadow;
             p{
-                @include fontConfig(1.3rem, italic, bolder);
-                color:  $colorWhite-Lite;
+                @include fontConfig(1.3rem, bolder, $blueFederal);
+                line-height: 1.8rem;
                 margin: auto;
-                max-width: 600px;
+                max-width: 700px;
                 padding: 30px 0;
-                text-indent: 30px
+                text-indent: 30px;
+
             }
         }
         .subtitle{
                 
-            @include fontConfig(2rem, italic, bolder);
-            color:  $colorBlue-Sky;
+            @include fontConfig(2rem, bolder, $caribe);
             text-indent: 30px;
         }
-        .div1{       
-            @include fontConfig(1.3rem, normal, normal);
-            color:  $colorWhite-Lite;
-            letter-spacing: 1px;
-            text-align: justify;
-            text-indent: 30px;
+        
+        .p1, .p2, .p3, .p4, .p5{
+            @include fontConfig(1.3rem, bolder, $blueFederal);
         }
-        .pb{
-            grid-column: 1;
-        }
-        .pc{
-            grid-column: 1;
-        }
-        .pd{
-            grid-column: 2;
-            grid-row: 5;
+        .p1{
+            margin: auto;
         }
         .img-arpanet, .internet-connect{
             align-self: end;
-            background-color:  $colorWhite-Dark;                border-radius: 5px;
-            box-shadow: $boxShadow;
-            margin-bottom: 20px;
+            background: $wenge;
+            border-radius: 3px;
+            margin-bottom: 10px;
             padding-bottom: 1px;
             img{
-                border-radius: 5px 5px 0 0;
+                border-radius: 3px 3px 0 0;
                 width: 100%;
             }
             .figcaption{
@@ -209,119 +174,72 @@ strong{
                 text-indent: 10px;
             }
         }
-        .div2{
-                
+        .div3{       
+            letter-spacing: 1px;
+            margin: 10px 0;
+            text-align: justify;
+            text-indent: 30px;
             p{
-                @include fontConfig(1.2rem, none, none);
-                color:  $colorWhite-Lite;
-                letter-spacing: 1px;
-                text-align: justify;
-                text-indent: 30px;
+                @include fontConfig(1.3rem, bolder, $blueFederal);
+                margin: 30px auto;
+                max-width: 700px;
             }
         }
         .smartphone{
             img{
-                border-radius: 5px;
-                box-shadow: $boxShadow;
+                border-radius: 3px;
                 width: 100%;
             }
         }
-        .p1{
-            @include fontConfig(1.5rem, italic, bolder);
-            align-content: center;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color:  $colorBlue-Sky;
+        .p6{
+            @include fontConfig(1.3rem, bolder, $blueFederal);
+            align-self: center;
             display: grid;
             padding: 10px;
             text-align: justify;
         }
         .exemples{
-            @include fontConfig(1.5rem, italic, bolder);
-            border-radius: 10px;
-            box-shadow: $boxShadow;
+            @include fontConfig(1.5rem, bolder, $blueFederal);
             margin: auto;
             padding: 30px;
             width: 430px;
             h3{
-                color: $colorBlue-Sky;
+                @include fontConfig(3rem, bolder, $caribe);
                 margin-bottom: 30px;
+                text-shadow: $textShadow;
             }
             i{
-                    
                 font-size: 3.5rem;
                 padding: 10px;
             }
             li{
-                    
                 padding: 10px;
             }
-            .burger{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorBrown;
-                display: flex;
-                margin: 30px 0;
+            .burger{    
+                @include configDisplay($colorBrown);
             }
             .plane{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorWhite-Dark;
-                display: flex;
-                margin: 30px 0;
-
+                @include configDisplay($colorWhite-Dark);
             }
             .locate{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorRed;
-                display: flex;
-                margin: 30px 0;
-
+                @include configDisplay($chama);
             }
             .cloud{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorYellow;
-                display: flex;
-                margin: 30px 0;
-
+                @include configDisplay($colorYellow);
             }
             .bascket{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorRed;
-                display: flex;
-                margin: 30px 0;
-
+                @include configDisplay($colorRed);
             }
             .carrot{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: #f55236;
-                display: flex;
-                margin: 30px 0;
+                @include configDisplay($chama);
             }
             .icons{
-                    
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorYellow;
-                display: flex;
-                margin: 30px 0;
-
+                @include configDisplay($colorYellow);
             }
         }
         .conclusion1{
                 
-            @include fontConfig(1.3rem, italic, bolder);
-            color:  $colorWhite-Lite;
+            @include fontConfig(1.5rem, bolder, $blueFederal);
             padding: 30px;
             text-align: center;
         }
@@ -330,53 +248,46 @@ strong{
             background-image: url(../Img/wolrd-connected.jpg);
             background-size: cover;
             background-repeat: no-repeat;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
+            border-radius: 3px;
             p{
-                @include fontConfig(1.6rem, italic, bolder);
+                @include fontConfig(1.6rem, bolder, $colorWhite);
                 background: $colorFade;
-                border-radius: 10px;
-                color: $colorWhite;
+                border-radius: 3px;
                 line-height: 1.7rem;
                 padding: 30px;
                 text-indent: 30px;
             }
         }
-        .p2{
+        .p7{
                 
-            @include fontConfig(1.7rem, italic, bolder);
-            align-items: center;
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color: $colorBlue-Sky;
+            @include fontConfig(1.7rem, bolder, $blueFederal);
+            align-self: center;
+            border-radius: 3px;
             display: grid;
             letter-spacing: 1px;
             text-indent: 30px;
         }
-        .div3{
-                
+        .div4{
+            align-self: center;
             p{
-                @include fontConfig(1.5rem, none, none);
-                color:  $colorWhite-Lite;
+                @include fontConfig(1.5rem, bolder, $blueFederal);
                 line-height: 1.7rem;
                 text-indent: 30px;
             }
         }
         .teclado{
                 
-            border-radius: 10px;
-            box-shadow: $boxShadow;
+            border-radius: 3px;
             display: grid;
             align-self: center;
             width: 100%;
         }
         
         .blockquote{
-                
-            border-radius: 10px;
+            border-radius: 3px;
             text-align: center;
             p{
-                @include fontConfig(2rem, italic, bolder);
+                @include fontConfig(2rem, bolder, $blueFederal);
                 padding: 30px;
             }
         }
@@ -385,28 +296,32 @@ strong{
             background-image: url(../Img/web-socials.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            border-radius: 10px;
-            .a1{
+            border-radius: 3px;
+            .p8{
                 background: $colorFade;
-                border-radius: 10px 10px 0 0;
+                border-radius: 3px 3px 0 0;
                 color: $colorWhite;
             }
-            .a2{
+            .p9{
                 background: $colorFade;
                 color: $colorWhite;
-                border-radius: 0 0 10px 10px;
+                border-radius: 0 0 3px 3px;
             }
+        }
+        .p10{
+            @include fontConfig(1.3rem, bolder, $blueFederal);
+            margin: auto;
+            max-width: 700px;
         }
         .mind2{
-            box-shadow: $boxShadow;
-            color: $colorBlue-Sky
+            :nth-child(2){
+                color: $caribe;
+            }
         }
-        .p3, .p4, .p5{
+        .p12, .p13{
                 
-            @include fontConfig(1.5rem, none, none);
-            border-radius: 10px;
-            box-shadow: $boxShadow;
-            color:  $colorWhite-Lite;
+            @include fontConfig(1.5rem, bolder, $blueFederal);
+            border-radius: 3px;
             line-height: 1.9rem;
             margin: 30px;
         }
@@ -415,88 +330,156 @@ strong{
             background-image: url(../Img/tablet.jpg);
             background-size: cover;
             background-repeat: no-repeat;
-            border-radius: 10px;
+            border-radius: 3px;
             display: grid;
             text-align: center;
             p{
-                    
-                @include fontConfig(2rem, italic, bolder);
+                @include fontConfig(2rem, bolder, $colorWhite);
                 background: $colorFade;
-                color: $colorWhite;
                 padding: 50px;
             }
             .a3{
-                border-radius: 10px 10px 0 0;
+                border-radius: 3px 3px 0 0;
             }
             .a4{
-                border-radius: 0 0 10px 10px;
+                border-radius: 0 0 3px 3px;
             }
         }
     }
     .jobs{
         grid-area: jobs;
         margin: auto;
-        max-width: 960px;
-        padding: 0 20px;
+        max-width: 100%;
         h3{
-            @include fontConfig(2.5rem, italic, bolder);
-            color: $colorBlue-Sky;
+            @include fontConfig(2.5rem, bolder, $caribe);
             padding: 30px 0;
             text-align: center;
         }
         ul{
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
             margin: 0 auto;
-            width: auto;
+            width: 100%;
             li{
-                align-items: center;
-                display: flex;
-                justify-content: center;
                 margin: 0 auto;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                padding: 5px;
-                max-width: 16.6%;
-                min-width: 100px;
-                img{
-                    transition: .3s ease-in-out;
-                    width: 100%;
-                    &:hover{
-                        width: 95%;
+                // overflow: hidden;
+                padding: 5px;         
+                .imobi{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/site-imobiliaria.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
                     }
                 }
+                .food-site{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/site-lanches.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .projeto-android{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/site-android.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .galeria{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/site-galeria.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .store-master{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/store-master.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .wildbeast{
+                    height: 250px;
+                    width: 140px;
+                    background-size: cover;
+                    background-image: url(../Img/wildbeast.jpg);
+                    a{
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                &:hover{
+                    .imobi{
+                        transform: scale(1.5);
+                    }
+                    .food-site{
+                        transform: scale(1.5);
+                    }
+                    .projeto-android{
+                        transform: scale(1.5);
+                    }
+                    .galeria{
+                        transform: scale(1.5);
+                    }
+                    .store-master{
+                        transform: scale(1.5);
+                    }
+                    .wildbeast{
+                        transform: scale(1.5);
+                    }
+                } 
             }
         }
     }
     .footer{
-        background: linear-gradient(to top, $colorWhite-Dark, transparent);
+        border-top: 5px solid $colorWhite-Dark;box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
         grid-area: footer;
         height: auto;
-        padding: 50px 30px 0 30px;
+        padding: 20px 0;
         text-align: center;
         width: 100%;
         .contact{
             display: flex;
-            @include fontConfig(1.5rem, italic, lighter);
-            justify-content: space-evenly;
+            justify-content: center;
             a{
-                @include config();
-                background: $colorWhite-Lite;
-                border-radius: 5px;
-                color: $colorWhite-Dark;
-                padding: 6px 10px;
-                // padding: 6px 10px;
-                &:hover{
-                    background: $colorWhite-Dark;
-                    color: $colorWhite;
+                // @include fontConfig(2rem, bolder, $caribe);
+                // padding: 3px 6px;
+                // &:hover{
+                //     color: $colorWhite;
+                //     text-decoration: underline;
+                // }
+                img{
+                    padding: 0 10px;
+                    width: 70px;
                 }
             }
         }
         .propert{
-            @include fontConfig(2rem, italic, bolder);
             a{
-                color:  $colorWhite-Dark;
+                @include fontConfig(2rem, bolder, $colorWhite-Dark);
             }
         }
     }
@@ -508,6 +491,7 @@ strong{
             align-items: center;
             background: linear-gradient(to bottom, $colorBlue, transparent);
             display: flex;
+            height: auto;
             padding: 30px;
             .logo{
                 max-width: 150px;
@@ -519,20 +503,20 @@ strong{
         .main{
             width: 90%;
             .title{
-                @include fontConfig(2.8rem, italic, bolder);
+                @include fontConfig(2.8rem, bolder, $colorGreen);
             }
             .intro{
                 p{
-                    @include fontConfig(1.3rem, italic, bolder);
+                    @include fontConfig(1.3rem, bolder, $colorGreen);
                     padding: 20px 0;
                     text-indent: 0;
                 }
             }
             .subtitle{
-                @include fontConfig(2rem, italic, bolder);
+                @include fontConfig(2rem, bolder, $colorGreen);
             }
             .div1{
-                @include fontConfig(1.2rem, normal, normal);
+                @include fontConfig(1.2rem, normal, $colorGreen);
                 line-height: 1.5rem;
             }
             .div-img1{
@@ -543,7 +527,7 @@ strong{
             }
             .div2{  
                 p{
-                    @include fontConfig(1rem, none, none);
+                    @include fontConfig(1rem, none, $colorGreen);
                     font-size: 1.2rem;
                 }
             }
@@ -558,7 +542,7 @@ strong{
             }
             .p1{
                 
-                @include fontConfig(1.2rem, italic, bolder);
+                @include fontConfig(1.2rem, bolder, $colorGreen);
 
             }
             .conclusion2{
@@ -568,7 +552,7 @@ strong{
                 }
             }
             .p2{
-                @include fontConfig(1.7rem, italic, bolder);
+                @include fontConfig(1.7rem, bolder, $colorGreen);
                 align-items: center;
                 border-radius: 10px;
                 box-shadow: $boxShadow;
@@ -579,7 +563,7 @@ strong{
             }
             .div3{   
                 p{
-                    @include fontConfig(1.3rem, none, none);
+                    @include fontConfig(1.3rem, none, $colorGreen);
                     text-align: justify;
                 }
             }
@@ -592,7 +576,7 @@ strong{
                 background-size: cover;
             }
             .p3, .p4, .p5{    
-                @include fontConfig(1.3rem, italic, bolder);
+                @include fontConfig(1.3rem, bolder, $colorGreen);
             }
             .finited{
                 background-position: right;
@@ -619,18 +603,18 @@ strong{
             display: block;
             width: 100%;
             .title{
-                @include fontConfig(2.3rem, italic, bolder);
+                @include fontConfig(2.3rem, bolder, $colorGreen);
             }
             .intro{
                 p{
-                    @include fontConfig(1.3rem, italic, bolder);
+                    @include fontConfig(1.3rem, bolder, $colorGreen);
                 }
             }
             .subtitle{
-                @include fontConfig(2rem, italic, bolder);
+                @include fontConfig(2rem, bolder, $colorGreen);
             }
             .div1{
-                @include fontConfig(1.2rem, normal, normal);
+                @include fontConfig(1.2rem, normal, $colorGreen);
                 line-height: 1.5rem;
             }
             .div-img1{
@@ -641,7 +625,7 @@ strong{
             }
             .div2{
                 p{
-                    @include fontConfig(1rem, none, none);
+                    @include fontConfig(1rem, none, $colorGreen);
                     font-size: 1.2rem;
                 }
             }
@@ -656,10 +640,10 @@ strong{
                 }
             }
             .p1{
-                @include fontConfig(1.2rem, italic, bolder);
+                @include fontConfig(1.2rem, bolder, $colorGreen);
             }
             .exemples{
-                @include fontConfig(1.3rem, italic, bolder);
+                @include fontConfig(1.3rem, bolder, $colorGreen);
                 margin: 30px 0;
                 width: 100%; 
             }
@@ -671,7 +655,7 @@ strong{
                 }
             }
             .p2{
-                @include fontConfig(1.7rem, italic, bolder);
+                @include fontConfig(1.7rem, bolder, $colorGreen);
                 align-items: center;
                 border-radius: 10px;
                 box-shadow: $boxShadow;
@@ -683,7 +667,7 @@ strong{
             }
             .div3{   
                 p{
-                    @include fontConfig(1.3rem, none, none);
+                    @include fontConfig(1.3rem, none, $colorGreen);
                     margin: 30px 0;
                     text-align: justify;
                 }
@@ -697,7 +681,7 @@ strong{
                 background-size: cover;
             }
             .p3, .p4, .p5{    
-                @include fontConfig(1.3rem, italic, bolder);
+                @include fontConfig(1.3rem, bolder, $colorGreen);
             }
             .finited{
                 background-position: right;
@@ -710,7 +694,7 @@ strong{
                 flex-direction: column;
                 justify-content: center;
                 a{
-                    @include fontConfig(1.5rem, italic, lighter);
+                    @include fontConfig(1.5rem, lighter, $colorGreen);
                     margin: 5px auto;
                     padding: 6px 10px;
                     width: 75%;
