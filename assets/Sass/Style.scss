@@ -31,11 +31,12 @@
             .logo_svg{
                 display: none;
             }
-            width: 350px;
+            left: 40px;
             position: absolute;
             top: 48%;
+            width: 350px;
             p{
-                @include fontConfig(1.1rem, lighter, $colorWhite)
+                @include fontConfig(1.1rem, $colorWhite)
             }
         }
         .nav{
@@ -51,7 +52,7 @@
                 li{ 
                     margin: 10px 40px;
                     a{
-                        @include fontConfig(1.3rem, bolder, $colorWhite);
+                        @include fontConfig(1.3rem, $colorWhite);
                     }
                 }
             }
@@ -70,7 +71,7 @@
                 width: 35px;
                 transition: 0.5s ease-in-out;
             }
-            &.active{
+            &:hover{
                 :nth-child(1){
                     background: $colorRed;
                     transform: translateY(9px) rotate(225deg);
@@ -96,13 +97,13 @@
         max-width: 1000px;
         padding: 30px;
         .div1{
-            @include fontConfig(1.3rem, bolder, $blueFederal);
+            @include fontConfig(1.3rem, $blueFederal);
             align-content: start; 
             display: grid;
             grid-column: 1;
             padding:  0 10px;
             h2{
-                @include fontConfig(1.8rem, bolder, $caribe);
+                @include fontConfig(1.8rem, $caribe);
                 padding-bottom: 10px
             }
             p{
@@ -113,13 +114,13 @@
             }
         }
         .div2{
-            @include fontConfig(1.3rem, bolder, $blueFederal);
+            @include fontConfig(1.3rem, $blueFederal);
             align-content: start; 
             display: grid;
             grid-column: 2;
             padding: 0 10px;
             h2{
-                @include fontConfig(1.8rem, bolder, $caribe);
+                @include fontConfig(1.8rem, $caribe);
                 padding-bottom: 10px
             }
             p{
@@ -130,7 +131,7 @@
             }
         }
         .title{
-            @include fontConfig(3.5rem, bolder, $caribe);
+            @include fontConfig(3.5rem, $caribe);
             text-decoration: underline;
             text-indent: 30px;
         }
@@ -138,7 +139,7 @@
             border-radius: 3px;
             box-shadow: $boxShadow;
             p{
-                @include fontConfig(1.3rem, bolder, $blueFederal);
+                @include fontConfig(1.3rem, $blueFederal);
                 line-height: 1.8rem;
                 margin: auto;
                 max-width: 700px;
@@ -149,12 +150,12 @@
         }
         .subtitle{
                 
-            @include fontConfig(2rem, bolder, $caribe);
+            @include fontConfig(2rem, $caribe);
             text-indent: 30px;
         }
         
         .p1, .p2, .p3, .p4, .p5{
-            @include fontConfig(1.3rem, bolder, $blueFederal);
+            @include fontConfig(1.3rem, $blueFederal);
         }
         .p1{
             margin: auto;
@@ -180,7 +181,7 @@
             text-align: justify;
             text-indent: 30px;
             p{
-                @include fontConfig(1.3rem, bolder, $blueFederal);
+                @include fontConfig(1.3rem, $blueFederal);
                 margin: 30px auto;
                 max-width: 700px;
             }
@@ -192,28 +193,29 @@
             }
         }
         .p6{
-            @include fontConfig(1.3rem, bolder, $blueFederal);
+            @include fontConfig(1.3rem, $blueFederal);
             align-self: center;
             display: grid;
             padding: 10px;
             text-align: justify;
         }
         .exemples{
-            @include fontConfig(1.5rem, bolder, $blueFederal);
+            @include fontConfig(1.5rem, $blueFederal);
             margin: auto;
-            padding: 30px;
-            width: 430px;
+            width: 600px;
             h3{
-                @include fontConfig(3rem, bolder, $caribe);
+                @include fontConfig(3rem, $caribe);
                 margin-bottom: 30px;
                 text-shadow: $textShadow;
             }
-            i{
-                font-size: 3.5rem;
-                padding: 10px;
-            }
             li{
-                padding: 10px;
+
+                align-items: center;
+                display: flex;
+                justify-content: space-around;
+                img{
+                    width: 70px;
+                }                
             }
             .burger{    
                 @include configDisplay($colorBrown);
@@ -239,7 +241,7 @@
         }
         .conclusion1{
                 
-            @include fontConfig(1.5rem, bolder, $blueFederal);
+            @include fontConfig(1.5rem, $blueFederal);
             padding: 30px;
             text-align: center;
         }
@@ -250,7 +252,7 @@
             background-repeat: no-repeat;
             border-radius: 3px;
             p{
-                @include fontConfig(1.6rem, bolder, $colorWhite);
+                @include fontConfig(1.6rem, $colorWhite);
                 background: $colorFade;
                 border-radius: 3px;
                 line-height: 1.7rem;
@@ -260,7 +262,7 @@
         }
         .p7{
                 
-            @include fontConfig(1.7rem, bolder, $blueFederal);
+            @include fontConfig(1.7rem, $blueFederal);
             align-self: center;
             border-radius: 3px;
             display: grid;
@@ -270,7 +272,7 @@
         .div4{
             align-self: center;
             p{
-                @include fontConfig(1.5rem, bolder, $blueFederal);
+                @include fontConfig(1.5rem, $blueFederal);
                 line-height: 1.7rem;
                 text-indent: 30px;
             }
@@ -287,7 +289,7 @@
             border-radius: 3px;
             text-align: center;
             p{
-                @include fontConfig(2rem, bolder, $blueFederal);
+                @include fontConfig(2rem, $blueFederal);
                 padding: 30px;
             }
         }
@@ -309,7 +311,7 @@
             }
         }
         .p10{
-            @include fontConfig(1.3rem, bolder, $blueFederal);
+            @include fontConfig(1.3rem, $blueFederal);
             margin: auto;
             max-width: 700px;
         }
@@ -320,7 +322,7 @@
         }
         .p12, .p13{
                 
-            @include fontConfig(1.5rem, bolder, $blueFederal);
+            @include fontConfig(1.5rem, $blueFederal);
             border-radius: 3px;
             line-height: 1.9rem;
             margin: 30px;
@@ -334,7 +336,7 @@
             display: grid;
             text-align: center;
             p{
-                @include fontConfig(2rem, bolder, $colorWhite);
+                @include fontConfig(2rem, $colorWhite);
                 background: $colorFade;
                 padding: 50px;
             }
@@ -351,7 +353,7 @@
         margin: auto;
         max-width: 100%;
         h3{
-            @include fontConfig(2.5rem, bolder, $caribe);
+            @include fontConfig(2.5rem, $caribe);
             padding: 30px 0;
             text-align: center;
         }
@@ -363,7 +365,6 @@
             width: 100%;
             li{
                 margin: 0 auto;
-                // overflow: hidden;
                 padding: 5px;         
                 .imobi{
                     height: 250px;
@@ -455,7 +456,7 @@
         }
     }
     .footer{
-        border-top: 5px solid $colorWhite-Dark;box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
+        background: linear-gradient(to bottom, $caribe, transparent);
         grid-area: footer;
         height: auto;
         padding: 20px 0;
@@ -465,12 +466,6 @@
             display: flex;
             justify-content: center;
             a{
-                // @include fontConfig(2rem, bolder, $caribe);
-                // padding: 3px 6px;
-                // &:hover{
-                //     color: $colorWhite;
-                //     text-decoration: underline;
-                // }
                 img{
                     padding: 0 10px;
                     width: 70px;
@@ -479,227 +474,356 @@
         }
         .propert{
             a{
-                @include fontConfig(2rem, bolder, $colorWhite-Dark);
+                @include fontConfig(2rem, $colorWhite-Dark);
             }
         }
     }
-}    
-@media(max-width:750px){
+} 
+
+@include breakpoint("<=medium"){
+
     .container{
         display: block;
         .header{
             align-items: center;
-            background: linear-gradient(to bottom, $colorBlue, transparent);
+            background: $caribe;
             display: flex;
-            height: auto;
-            padding: 30px;
+            height: 120px;
             .logo{
-                max-width: 150px;
+                align-items: center;
+                display: flex;
+                top: 0;
+                .logo_png{
+                    display: none;
+                }
+                height: 100%;
+                .logo_svg{
+                    display: block;
+                }
+            }
+            .menu-mobile{
+                display: block;
+                position: absolute;
+                right: 35px;
+                .line{
+                    background: $colorWhite;
+                }
             }
             .nav{
                 display: none;
             }
         }
         .main{
-            width: 90%;
+            padding: 0;
+            width: 80%;
             .title{
-                @include fontConfig(2.8rem, bolder, $colorGreen);
+                @include fontConfig(2.5rem, $caribe);
             }
             .intro{
                 p{
-                    @include fontConfig(1.3rem, bolder, $colorGreen);
-                    padding: 20px 0;
+                    @include fontConfig(1.2rem, $blueFederal);
+                    padding: 20px;
                     text-indent: 0;
                 }
             }
             .subtitle{
-                @include fontConfig(2rem, bolder, $colorGreen);
+                @include fontConfig(1.8rem, $caribe);
             }
-            .div1{
-                @include fontConfig(1.2rem, normal, $colorGreen);
-                line-height: 1.5rem;
-            }
-            .div-img1{
-                align-items: center;
-                .img-arpanet, .internet-connect{
-                    padding-bottom: 10px;
-                }
-            }
-            .div2{  
-                p{
-                    @include fontConfig(1rem, none, $colorGreen);
-                    font-size: 1.2rem;
-                }
-            }
-            .smartphone{
-                align-content: center;
-                display: grid;
-                img{
-                    border-radius: 5px;
-                    box-shadow: $boxShadow;
-                    width: 100%;
-                }
+            .p1, .p2, .p3, .p4, .p5{
+                @include fontConfig(1.2rem, $blueFederal);
             }
             .p1{
-                
-                @include fontConfig(1.2rem, bolder, $colorGreen);
-
+                margin: auto;
             }
-            .conclusion2{
-                grid-column: 1 / -1;
-                p{  
-                    line-height: 1.8rem;
+            .img-arpanet, .internet-connect{
+                align-self: end;
+                background: $wenge;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                padding-bottom: 1px;
+                img{
+                    border-radius: 3px 3px 0 0;
+                    width: 100%;
+                }
+                .figcaption{
+                    color: $colorWhite;
+                    font-size: 0.75rem;
+                    text-indent: 10px;
                 }
             }
-            .p2{
-                @include fontConfig(1.7rem, bolder, $colorGreen);
-                align-items: center;
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorBlue-Sky;
-                display: grid;
+            .div3{       
                 letter-spacing: 1px;
+                margin: 10px 0;
+                text-align: justify;
                 text-indent: 30px;
-            }
-            .div3{   
                 p{
-                    @include fontConfig(1.3rem, none, $colorGreen);
-                    text-align: justify;
-                }
-            }
-            .teclado{
-                grid-column: 1 / -1 ;
-            }
-            .mind1{
-                background-attachment: local;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            .p3, .p4, .p5{    
-                @include fontConfig(1.3rem, bolder, $colorGreen);
-            }
-            .finited{
-                background-position: right;
-            }
-        }
-    }    
-}
-@media(max-width:500px){
-    .container{
-        display: block;
-        .header{
-            align-items: center;
-            background: linear-gradient(to bottom, $colorBlue, transparent);
-            display: flex;
-            padding: 30px;
-            .logo{
-                max-width: 150px;
-            }
-            .nav{
-                display: none;
-            }
-        }
-        .main{
-            display: block;
-            width: 100%;
-            .title{
-                @include fontConfig(2.3rem, bolder, $colorGreen);
-            }
-            .intro{
-                p{
-                    @include fontConfig(1.3rem, bolder, $colorGreen);
-                }
-            }
-            .subtitle{
-                @include fontConfig(2rem, bolder, $colorGreen);
-            }
-            .div1{
-                @include fontConfig(1.2rem, normal, $colorGreen);
-                line-height: 1.5rem;
-            }
-            .div-img1{
-                align-items: center;
-                .img-arpanet, .internet-connect{
-                    padding-bottom: 10px;
-                }
-            }
-            .div2{
-                p{
-                    @include fontConfig(1rem, none, $colorGreen);
-                    font-size: 1.2rem;
+                    @include fontConfig(1.2rem, $blueFederal);
+                    margin: 30px auto;
+                    max-width: 700px;
                 }
             }
             .smartphone{
-                align-content: center;
-                display: grid;
-                margin: 30px 0;
                 img{
-                    border-radius: 5px;
-                    box-shadow: $boxShadow;
+                    border-radius: 3px;
                     width: 100%;
                 }
             }
-            .p1{
-                @include fontConfig(1.2rem, bolder, $colorGreen);
+            .p6{
+                @include fontConfig(1.2rem, $blueFederal);
+                align-self: center;
+                display: grid;
+                padding: 10px;
+                text-align: justify;
             }
             .exemples{
-                @include fontConfig(1.3rem, bolder, $colorGreen);
-                margin: 30px 0;
-                width: 100%; 
+                @include fontConfig(1.3rem, $blueFederal);
+                width: 500px;
+                h3{
+                    @include fontConfig(2rem, $caribe);
+                }
+                li{                       
+                    width: 90%;
+                    img{
+                        margin: 0 10px;
+                        width: 60px;
+                    }                
+                }
+                .burger{    
+                    @include configDisplay($colorBrown);
+                }
+                .plane{
+                    @include configDisplay($colorWhite-Dark);
+                }
+                .locate{
+                    @include configDisplay($chama);
+                }
+                .cloud{
+                    @include configDisplay($colorYellow);
+                }
+                .bascket{
+                    @include configDisplay($colorRed);
+                }
+                .carrot{
+                    @include configDisplay($chama);
+                }
+                .icons{
+                    @include configDisplay($colorYellow);
+                }
+            }
+            .conclusion1{
+                    
+                @include fontConfig(1.3rem, $blueFederal);
             }
             .conclusion2{
-                grid-column: 1 / -1;
-                margin: 30px 0;
-                p{  
-                    line-height: 1.8rem;
-                }
-            }
-            .p2{
-                @include fontConfig(1.7rem, bolder, $colorGreen);
-                align-items: center;
-                border-radius: 10px;
-                box-shadow: $boxShadow;
-                color: $colorBlue-Sky;
-                display: grid;
-                letter-spacing: 1px;
-                margin: 30px 0;
-                text-indent: 30px;
-            }
-            .div3{   
                 p{
-                    @include fontConfig(1.3rem, none, $colorGreen);
-                    margin: 30px 0;
-                    text-align: justify;
+                    @include fontConfig(1.3rem, $colorWhite);
                 }
             }
-            .teclado{
-                display: none;
+            .p7{
+                    
+                @include fontConfig(1.3rem, $blueFederal);
+            }
+            .div4{
+                align-self: center;
+                p{
+                    @include fontConfig(1.2rem, $blueFederal);
+                    // line-height: 1.3rem;
+                }
+            }
+            .blockquote{
+                border-radius: 3px;
+                text-align: center;
+                p{
+                    @include fontConfig(1.3rem, $blueFederal);
+                    padding: 30px;
+                }
             }
             .mind1{
                 background-attachment: local;
-                background-repeat: no-repeat;
-                background-size: cover;
+                .p8{
+                    background: $colorFade;
+                    border-radius: 3px 3px 0 0;
+                    color: $colorWhite;
+                }
+                .p9{
+                    
+                    background: $colorFade;
+                    color: $colorWhite;
+                    border-radius: 0 0 3px 3px;
+                }
             }
-            .p3, .p4, .p5{    
-                @include fontConfig(1.3rem, bolder, $colorGreen);
+            .p10{
+                @include fontConfig(1.2rem, $blueFederal);
+            }
+            .mind2{
+                :nth-child(2){
+                    color: $caribe;
+                }
+            }
+            .p12, .p13{
+                
+                @include fontConfig(1.2rem, $blueFederal);
             }
             .finited{
-                background-position: right;
+                p{
+                    @include fontConfig(1.2rem, $colorWhite);
+                    background: $colorFade;
+                    padding: 40px;
+                }
+                .p8{
+                    border-radius: 3px 3px 0 0;
+                }
+                .p9{
+                    border-radius: 0 0 3px 3px;
+                }
+            }
+        }
+        .jobs{
+            grid-area: jobs;
+            margin: auto;
+            width: 80%;
+            h3{
+                @include fontConfig(2.5rem, $caribe);
+                // padding: 30px 0;
+                text-align: center;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin: 0 auto;
+                width: 90%;
+                li{
+                    margin: 0 auto;
+                    padding: 3px;         
+                    .imobi{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/site-imobiliaria.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .food-site{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/site-lanches.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .projeto-android{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/site-android.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .galeria{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/site-galeria.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .store-master{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/store-master.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .wildbeast{
+                        height: 180px;
+                        width: 80px;
+                        background-size: cover;
+                        background-image: url(../Img/wildbeast.jpg);
+                        background-position: center;
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    &:hover{
+                        .imobi{
+                            transform: scale(1.5);
+                        }
+                        .food-site{
+                            transform: scale(1.5);
+                        }
+                        .projeto-android{
+                            transform: scale(1.5);
+                        }
+                        .galeria{
+                            transform: scale(1.5);
+                        }
+                        .store-master{
+                            transform: scale(1.5);
+                        }
+                        .wildbeast{
+                            transform: scale(1.5);
+                        }
+                    } 
+                }
             }
         }
         .footer{
-            padding: 20px 30px;
+            border-top: 5px solid $colorWhite-Dark;box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
+            grid-area: footer;
+            height: auto;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
             .contact{
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 a{
-                    @include fontConfig(1.5rem, lighter, $colorGreen);
-                    margin: 5px auto;
-                    padding: 6px 10px;
-                    width: 75%;
+                    
+                    img{
+                        padding: 0 10px;
+                        width: 70px;
+                    }
+                }
+            }
+            .propert{
+                a{
+                    @include fontConfig(2rem, $colorWhite-Dark);
                 }
             }
         }
-    }    
+    } 
+}
+@include breakpoint("<=mini"){
+    .container{
+        .main{
+            display: block;
+            .exemples{
+                width: 80%;
+            }
+        }
+    }
 }
