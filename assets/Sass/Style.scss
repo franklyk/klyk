@@ -24,13 +24,9 @@
         grid-area: header;
         height: 100vh;
         justify-content: space-between;
-        padding: 30px;
         position: relative;
         width: 100%;
         .logo{
-            .logo_svg{
-                display: none;
-            }
             left: 40px;
             position: absolute;
             top: 48%;
@@ -480,7 +476,7 @@
     }
 } 
 
-@include breakpoint("<=medium"){
+@include breakpoint("<=tablet"){
 
     .container{
         display: block;
@@ -488,17 +484,16 @@
             align-items: center;
             background: $caribe;
             display: flex;
-            height: 120px;
+            height: 130px;
             .logo{
-                align-items: center;
-                display: flex;
-                top: 0;
+                display: block;
+                top: 15px;
+                width: 200px;
                 .logo_png{
-                    display: none;
+                    width: 150px;
                 }
-                height: 100%;
-                .logo_svg{
-                    display: block;
+                p{
+                    text-indent: 0;
                 }
             }
             .menu-mobile{
@@ -516,6 +511,40 @@
         .main{
             padding: 0;
             width: 80%;
+            .div1{
+                @include fontConfig(1.2rem, $blueFederal);
+                align-content: start; 
+                display: grid;
+                grid-column: 1;
+                padding:  0 10px;
+                h2{
+                    @include fontConfig(1.4rem, $caribe);
+                    padding-bottom: 10px
+                }
+                p{
+                    line-height: 1.5rem;
+                    margin: 10px 0;
+                    text-align: justify;
+                    text-indent: 30px;
+                }
+            }
+            .div2{
+                @include fontConfig(1.2rem, $blueFederal);
+                align-content: start; 
+                display: grid;
+                grid-column: 2;
+                padding: 0 10px;
+                h2{
+                    @include fontConfig(1.4rem, $caribe);
+                    padding-bottom: 10px
+                }
+                p{
+                    line-height: 1.5rem;
+                    margin: 10px 0;
+                    text-align: justify;
+                    text-indent: 30px;
+                }
+            }
             .title{
                 @include fontConfig(2.5rem, $caribe);
             }
@@ -527,17 +556,18 @@
                 }
             }
             .subtitle{
-                @include fontConfig(1.8rem, $caribe);
+                @include fontConfig(1.7rem, $caribe);
             }
             .p1, .p2, .p3, .p4, .p5{
                 @include fontConfig(1.2rem, $blueFederal);
             }
             .p1{
+                text-align: center;
                 margin: auto;
             }
             .img-arpanet, .internet-connect{
                 align-self: end;
-                background: $wenge;
+                background: $colorWhite;
                 border-radius: 3px;
                 margin-bottom: 10px;
                 padding-bottom: 1px;
@@ -546,9 +576,11 @@
                     width: 100%;
                 }
                 .figcaption{
-                    color: $colorWhite;
-                    font-size: 0.75rem;
+                    color: $blueFederal;
+                    font-size: 1rem;
+                    padding: 2px;
                     text-indent: 10px;
+                    text-shadow: none;
                 }
             }
             .div3{       
@@ -612,44 +644,44 @@
             }
             .conclusion1{
                     
-                @include fontConfig(1.3rem, $blueFederal);
+                @include fontConfig(1.2rem, $blueFederal);
             }
             .conclusion2{
                 p{
-                    @include fontConfig(1.3rem, $colorWhite);
+                    @include fontConfig(1.2rem, $colorWhite);
                 }
             }
             .p7{
                     
-                @include fontConfig(1.3rem, $blueFederal);
+                @include fontConfig(1.2rem, $blueFederal);
             }
             .div4{
                 align-self: center;
                 p{
                     @include fontConfig(1.2rem, $blueFederal);
-                    // line-height: 1.3rem;
                 }
             }
             .blockquote{
                 border-radius: 3px;
                 text-align: center;
                 p{
-                    @include fontConfig(1.3rem, $blueFederal);
-                    padding: 30px;
+                    @include fontConfig(1.2rem, $blueFederal);
                 }
             }
             .mind1{
                 background-attachment: local;
-                .p8{
+                .fade{
                     background: $colorFade;
-                    border-radius: 3px 3px 0 0;
-                    color: $colorWhite;
-                }
-                .p9{
-                    
-                    background: $colorFade;
-                    color: $colorWhite;
-                    border-radius: 0 0 3px 3px;
+                    .p8{
+                        border-radius: 3px 3px 0 0;
+                        color: $colorWhite;
+                    }
+                    .p9{
+                        
+                        // background: $colorFade;
+                        color: $colorWhite;
+                        border-radius: 0 0 3px 3px;
+                    }
                 }
             }
             .p10{
@@ -665,16 +697,17 @@
                 @include fontConfig(1.2rem, $blueFederal);
             }
             .finited{
-                p{
-                    @include fontConfig(1.2rem, $colorWhite);
+                background-position: right;
+                .fade{
                     background: $colorFade;
-                    padding: 40px;
-                }
-                .p8{
-                    border-radius: 3px 3px 0 0;
-                }
-                .p9{
-                    border-radius: 0 0 3px 3px;
+                    .p14{
+                        @include fontConfig(1.2rem, $colorWhite);
+                        border-radius: 3px 3px 0 0;
+                    }
+                    .p15{
+                        @include fontConfig(1.2rem, $colorWhite);
+                        border-radius: 0 0 3px 3px;
+                    }
                 }
             }
         }
@@ -792,7 +825,8 @@
             }
         }
         .footer{
-            border-top: 5px solid $colorWhite-Dark;box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
+            border-top: 5px solid $colorWhite-Dark;
+            box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
             grid-area: footer;
             height: auto;
             padding: 20px 0;
@@ -817,13 +851,171 @@
         }
     } 
 }
-@include breakpoint("<=mini"){
+@include breakpoint("<=smartphone"){
     .container{
-        .main{
-            display: block;
-            .exemples{
-                width: 80%;
+        display: block;
+        .header{
+            height: 130px;
+            .logo{
+                display: block;
+                top: 15px;
+                width: 200px;
+                .logo_png{
+                    width: 130px;
+                }
+                p{
+                    font-size: 1rem;
+                    text-indent: 0;
+                }
             }
         }
-    }
+        .main{
+            display: block;
+            .div1{
+                @include fontConfig(1.1rem, $blueFederal);
+                h2{
+                    @include fontConfig(1.2rem, $caribe);
+                    padding-bottom: 10px
+                }
+                p{
+                    margin: 10px 0;
+                    text-align: justify;
+                    text-indent: 30px;
+                }
+            }
+            .div2{
+                @include fontConfig(1.1rem, $blueFederal);
+                align-content: start; 
+                display: grid;
+                grid-column: 2;
+                padding: 0 10px;
+                h2{
+                    @include fontConfig(1.4rem, $caribe);
+                    padding-bottom: 10px
+                }
+                p{
+                    line-height: 1.5rem;
+                    margin: 10px 0;
+                    text-align: justify;
+                    text-indent: 30px;
+                }
+            }
+            .title{
+                @include fontConfig(2rem, $caribe);
+                padding: 20px 0
+            }
+            .intro{
+                p{
+                    @include fontConfig(1.1rem, $blueFederal);
+                    padding: 20px;
+                    text-indent: 0;
+                }
+            }
+            .subtitle{
+                @include fontConfig(1.7rem, $caribe);
+                padding: 20px 0;
+            }
+            .p1, .p2, .p3, .p4, .p5{
+                @include fontConfig(1.1rem, $blueFederal);
+            }
+            .p1{
+                text-align: center;
+                margin: auto;
+            }
+            .img-arpanet, .internet-connect{
+                margin: 20px 0;
+                img{
+                    border-radius: 3px 3px 0 0;
+                    width: 100%;
+                }
+                .figcaption{
+                    color: $blueFederal;
+                    font-size: 1rem;
+                    padding: 2px;
+                    text-indent: 10px;
+                    text-shadow: none;
+                }
+            }
+            .div3{
+                p{
+                    @include fontConfig(1.1rem, $blueFederal);
+                }
+            }
+            .exemples{
+                @include fontConfig(1.2rem, $blueFederal);
+                margin-top: 20px;
+                width: 80%;
+                h3{
+                    @include fontConfig(1.7rem, $caribe);
+                }
+            }
+            .conclusion1{
+                    
+                @include fontConfig(1.2rem, $blueFederal);
+            }
+            .conclusion2{
+                margin: 20px 0;
+                p{
+                    @include fontConfig(1.2rem, $colorWhite);
+                }
+            }
+            .p7{
+                    
+                @include fontConfig(1.1rem, $blueFederal);
+            }
+            .div4{
+                p{
+                    @include fontConfig(1.1rem, $blueFederal);
+                }
+            }
+            .blockquote{
+                border-radius: 3px;
+                text-align: center;
+                p{
+                    @include fontConfig(1.2rem, $blueFederal);
+                }
+            }
+            .teclado{
+                margin: 20px 0;
+            }
+            .p10{
+                @include fontConfig(1.1rem, $blueFederal);
+                margin-top: 20px;
+            }
+            .p12, .p13{
+                
+                @include fontConfig(1.2rem, $blueFederal);
+            }
+        }
+        .jobs{
+            h3{
+                @include fontConfig(2.5rem, $caribe);
+                text-align: center;
+            }
+            ul{
+                li{         
+                    &:hover{
+                        .imobi{
+                            transform: scale(1);
+                        }
+                        .food-site{
+                            transform: scale(1);
+                        }
+                        .projeto-android{
+                            transform: scale(1);
+                        }
+                        .galeria{
+                            transform: scale(1);
+                        }
+                        .store-master{
+                            transform: scale(1);
+                        }
+                        .wildbeast{
+                            transform: scale(1);
+                        }
+                    } 
+                }
+            }
+        }
+    } 
 }
