@@ -1,27 +1,42 @@
+@import 'vars';
 
+
+@mixin boxShadow(){
+    box-shadow: 0px 20px 54px 0 $colorWhite-Dark;
+}
 
 @mixin config(){
     border: 1px solid black;
 }
 
-@mixin backgroundConfig(){
-    background: #aca9a965;
-    backdrop-filter: blur(15px);
-}
-
-@mixin boxShadow(){
-    box-shadow: 0px 20px 54px 0 $colorWhite-Dark;
-}
-@mixin configDisplay($color){
+@mixin configDisplay(){
     border-radius: 3px;
-    color: $color;
     margin: 30px 0;
     width: 100%;
 }
 
-@mixin fontConfig($size, $color){
+@mixin fontSize($fontSize){
+    font-size: $fontSize;
+}
+
+@mixin fontConfig($color){
     color: $color;
+    font-style: italic;
+    font-weight: bolder;
+    text-indent: 30px;
+    text-shadow: $textShadow;
+}
+@mixin title($size){
+    color: $caribe;
     font-size: $size;
+    font-style: italic;
+    font-weight: bolder;
+    text-indent: 30px;
+    text-shadow: $textShadow;
+}
+
+@mixin paragraph{
+    color: $blueFederal;
     font-style: italic;
     font-weight: bolder;
     text-indent: 30px;

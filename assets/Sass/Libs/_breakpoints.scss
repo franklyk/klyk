@@ -4,9 +4,12 @@
 	/// Breakpoints.
 	///  @var {list}
 	$breakpoints: ((
-		pc:   (851px,  2000px),
-		tablet:   (500px,   850px),
-		smartphone:     (null,    499px),
+		wide:      ( 1281px,  2000px ),
+		normal:    ( 981px,   1280px ),
+		narrow:    ( 841px,   980px  ),
+		narrower:  ( 737px,   840px  ),
+		mobile:    ( 481px,   736px  ),
+		mobilep:   ( null,    480px  )
 	));
 //Mixins.
 	/// Sets breakpoints.
