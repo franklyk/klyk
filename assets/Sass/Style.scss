@@ -307,8 +307,10 @@
                     }
                 }
             }
-            .teclado{
+            .tread{
+                background: $colorFade;
                 border-radius: 3px;
+                clip-path: ellipse(53% 48% at 50% 50%);
                 display: grid;
                 align-self: center;
                 width: 100%;

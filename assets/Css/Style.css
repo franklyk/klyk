@@ -489,14 +489,16 @@ p {
       line-height: normal;
     }
   }
-  .container .main .teclado {
+  .container .main .tread {
+    background: rgba(0, 0, 0, 0.6235294118);
     border-radius: 3px;
+    clip-path: ellipse(53% 48% at 50% 50%);
     display: grid;
     align-self: center;
     width: 100%;
   }
   @media screen and (max-width: 736px) {
-    .container .main .teclado {
+    .container .main .tread {
       margin: 30px 0;
     }
   }
