@@ -26,19 +26,4 @@
     text-indent: 30px;
     text-shadow: $textShadow;
 }
-@mixin title($size){
-    color: $caribe;
-    font-size: $size;
-    font-style: italic;
-    font-weight: bolder;
-    text-indent: 30px;
-    text-shadow: $textShadow;
-}
 
-@mixin paragraph{
-    color: $blueFederal;
-    font-style: italic;
-    font-weight: bolder;
-    text-indent: 30px;
-    text-shadow: $textShadow;
-}

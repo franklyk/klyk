@@ -1,3 +1,26 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: 10px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F7173;
+  border: 1px solid #0F7173;
+  border-radius: 1px;
+  cursor: pointer;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525064;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -105,31 +128,12 @@ p {
   }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-  width: 10px;
-}
-::-webkit-scrollbar-track:hover {
-  background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0F7173;
-  border: 1px solid #0F7173;
-  border-radius: 1px;
-  cursor: pointer;
-  width: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #525064;
-}
-
 .col-wide {
   grid-column: 1/-1;
+}
+
+.fade {
+  background: rgba(0, 0, 0, 0.6235294118);
 }
 
 @media screen and (max-width: 2000px) {
@@ -155,29 +159,8 @@ p {
   @media screen and (max-width: 840px) {
     .container .header {
       background: #0F7173;
+      display: flex;
       height: 130px;
-    }
-    .container .header .logo {
-      display: block;
-      top: 15px;
-      width: 200px;
-    }
-    .container .header .logo .logo_png {
-      width: 150px;
-    }
-    .container .header .logo p {
-      text-indent: 0;
-    }
-    .container .header .menu-mobile {
-      display: block;
-      position: absolute;
-      right: 35px;
-    }
-    .container .header .menu-mobile .line {
-      background: #fff;
-    }
-    .container .header .nav {
-      display: none;
     }
   }
   @media screen and (max-width: 736px) {
@@ -199,20 +182,12 @@ p {
   @media screen and (max-width: 840px) {
     .container .header .logo {
       display: block;
-    }
-  }
-  @media screen and (max-width: 736px) {
-    .container .header .logo {
-      display: block;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .container .header .logo {
-      display: block;
       top: 15px;
-      width: 200px;
+      width: 250px;
     }
   }
+  @media screen and (max-width: 736px) {}
+  @media screen and (max-width: 480px) {}
   .container .header .logo p {
     color: #fff;
     font-style: italic;
@@ -220,7 +195,6 @@ p {
     text-indent: 30px;
     text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
     font-size: 1.25rem;
-    text-shadow: none;
   }
   @media screen and (max-width: 840px) {
     .container .header .logo p {
@@ -236,6 +210,9 @@ p {
     .container .header .logo p {
       font-size: 0.75rem;
     }
+  }
+  .container .header .logo .logo_png {
+    width: 150px;
   }
   .container .header .nav {
     bottom: 100px;
@@ -259,6 +236,11 @@ p {
     text-indent: 30px;
     text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
     font-size: 1.3rem;
+  }
+  @media screen and (max-width: 840px) {
+    .container .header .nav {
+      display: none;
+    }
   }
   .container .header .menu-mobile {
     cursor: pointer;
@@ -286,6 +268,13 @@ p {
     background: #ce0a0a;
     transform: translateY(-9px) rotate(-225deg);
   }
+  @media screen and (max-width: 840px) {
+    .container .header .menu-mobile {
+      display: block;
+      right: 40px;
+      position: absolute;
+    }
+  }
   .container .main {
     grid-area: main;
     grid-template-columns: repeat(2, 50%);
@@ -296,6 +285,17 @@ p {
     margin: 45px auto;
     max-width: 1000px;
     padding: 30px;
+  }
+  @media screen and (max-width: 980px) {
+    .container .main {
+      padding: 0;
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .container .main {
+      display: block;
+    }
   }
   .container .main .div1 {
     align-content: start;
@@ -312,6 +312,11 @@ p {
     text-align: justify;
     text-indent: 30px;
   }
+  @media screen and (max-width: 980px) {
+    .container .main .div1 p {
+      line-height: normal;
+    }
+  }
   .container .main .div2 {
     align-content: start;
     display: grid;
@@ -327,6 +332,11 @@ p {
     text-align: justify;
     text-indent: 30px;
   }
+  @media screen and (max-width: 840px) {
+    .container .main .div2 p {
+      line-height: normal;
+    }
+  }
   .container .main .title {
     text-decoration: underline;
     text-indent: 30px;
@@ -335,12 +345,22 @@ p {
     border-radius: 3px;
     box-shadow: 5px 5px 5px 5px rgba(172, 168, 133, 0.4431372549);
   }
+  @media screen and (max-width: 480px) {
+    .container .main .intro {
+      margin: 30px 0;
+    }
+  }
   .container .main .intro p {
     line-height: 1.8rem;
     margin: auto;
     max-width: 700px;
     padding: 30px 0;
     text-indent: 30px;
+  }
+  @media screen and (max-width: 840px) {
+    .container .main .intro p {
+      line-height: normal;
+    }
   }
   .container .main .subtitle {
     text-indent: 30px;
@@ -354,6 +374,11 @@ p {
     border-radius: 3px;
     margin-bottom: 10px;
     padding-bottom: 1px;
+  }
+  @media screen and (max-width: 480px) {
+    .container .main .img-arpanet, .container .main .internet-connect {
+      margin: 30px 0;
+    }
   }
   .container .main .img-arpanet img, .container .main .internet-connect img {
     border-radius: 3px 3px 0 0;
@@ -385,7 +410,7 @@ p {
   }
   .container .main .exemples {
     margin: auto;
-    width: 600px;
+    width: 70%;
   }
   .container .main .exemples h2 {
     margin-bottom: 30px;
@@ -395,44 +420,13 @@ p {
     align-items: center;
     display: flex;
     justify-content: space-around;
+    border-radius: 3px;
+    margin: 30px 0;
+    width: 100%;
   }
   .container .main .exemples li img {
+    margin: 10px;
     width: 70px;
-  }
-  .container .main .exemples .burger {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .plane {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .locate {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .cloud {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .team {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .carrot {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
-  }
-  .container .main .exemples .icons {
-    border-radius: 3px;
-    margin: 30px 0;
-    width: 100%;
   }
   .container .main .conclusion1 {
     padding: 30px;
@@ -444,20 +438,30 @@ p {
     background-repeat: no-repeat;
     border-radius: 3px;
   }
+  @media screen and (max-width: 736px) {
+    .container .main .conclusion2 {
+      margin: 30px 0;
+    }
+  }
   .container .main .conclusion2 p {
-    color: 1.6rem;
+    color: #fff;
     font-style: italic;
     font-weight: bolder;
     text-indent: 30px;
     text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
-    background: rgba(0, 0, 0, 0.4666666667);
+    background: rgba(0, 0, 0, 0.6235294118);
     border-radius: 3px;
     line-height: 1.7rem;
     padding: 30px;
     text-indent: 30px;
   }
+  @media screen and (max-width: 840px) {
+    .container .main .conclusion2 p {
+      line-height: normal;
+    }
+  }
   .container .main .p7 {
-    color: 1.7rem;
+    color: #525064;
     font-style: italic;
     font-weight: bolder;
     text-indent: 30px;
@@ -472,7 +476,7 @@ p {
     align-self: center;
   }
   .container .main .div4 p {
-    color: 1.5rem;
+    color: #525064;
     font-style: italic;
     font-weight: bolder;
     text-indent: 30px;
@@ -480,22 +484,27 @@ p {
     line-height: 1.7rem;
     text-indent: 30px;
   }
+  @media screen and (max-width: 840px) {
+    .container .main .div4 p {
+      line-height: normal;
+    }
+  }
   .container .main .teclado {
     border-radius: 3px;
     display: grid;
     align-self: center;
     width: 100%;
   }
+  @media screen and (max-width: 736px) {
+    .container .main .teclado {
+      margin: 30px 0;
+    }
+  }
   .container .main .blockquote {
     border-radius: 3px;
     text-align: center;
   }
   .container .main .blockquote p {
-    color: 2rem;
-    font-style: italic;
-    font-weight: bolder;
-    text-indent: 30px;
-    text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
     padding: 30px;
   }
   .container .main .mind1 {
@@ -505,45 +514,54 @@ p {
     background-size: cover;
     border-radius: 3px;
   }
-  .container .main .mind1 .p8 {
-    background: rgba(0, 0, 0, 0.4666666667);
-    border-radius: 3px 3px 0 0;
+  @media screen and (max-width: 840px) {
+    .container .main .mind1 {
+      background-attachment: local;
+      margin-bottom: 30px;
+    }
+  }
+  .container .main .mind1 p {
     color: #fff;
   }
+  .container .main .mind1 .p8 {
+    border-radius: 3px 3px 0 0;
+  }
   .container .main .mind1 .p9 {
-    background: rgba(0, 0, 0, 0.4666666667);
-    color: #fff;
     border-radius: 0 0 3px 3px;
   }
   .container .main .p10 {
     margin: auto;
-    max-width: 700px;
+    max-width: 600px;
   }
   .container .main .mind2 :nth-child(2) {
     color: #0F7173;
   }
-  .container .main .p12, .container .main .p13 {
-    border-radius: 3px;
-    line-height: 1.9rem;
-    margin: 30px;
+  .container .main .mind2 .p11, .container .main .mind2 .p12, .container .main .mind2 .p13 {
+    padding: 20px;
+  }
+  .container .main .p15 {
+    margin-bottom: 20px;
   }
   .container .main .finited {
-    align-items: center;
     background-image: url(../Img/tablet.jpg);
+    background-position: right;
     background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 3px;
-    display: grid;
     text-align: center;
   }
   .container .main .finited p {
-    background: rgba(0, 0, 0, 0.4666666667);
+    color: #fff;
     padding: 50px;
   }
-  .container .main .finited .a3 {
+  @media screen and (max-width: 480px) {
+    .container .main .finited p {
+      padding: 30px;
+    }
+  }
+  .container .main .finited .p16 {
     border-radius: 3px 3px 0 0;
   }
-  .container .main .finited .a4 {
+  .container .main .finited .p17 {
     border-radius: 0 0 3px 3px;
   }
   .container .jobs {
@@ -566,89 +584,18 @@ p {
     margin: 0 auto;
     padding: 5px;
   }
-  .container .jobs ul li .imobi {
+  .container .jobs ul li div {
     height: 250px;
     width: 140px;
     background-size: cover;
-    background-image: url(../Img/site-imobiliaria.jpg);
   }
-  .container .jobs ul li .imobi a {
+  .container .jobs ul li div a {
     display: block;
     height: 100%;
     width: 100%;
   }
-  .container .jobs ul li .food-site {
-    height: 250px;
-    width: 140px;
-    background-size: cover;
-    background-image: url(../Img/site-lanches.jpg);
-  }
-  .container .jobs ul li .food-site a {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-  .container .jobs ul li .projeto-android {
-    height: 250px;
-    width: 140px;
-    background-size: cover;
-    background-image: url(../Img/site-android.jpg);
-  }
-  .container .jobs ul li .projeto-android a {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-  .container .jobs ul li .galeria {
-    height: 250px;
-    width: 140px;
-    background-size: cover;
-    background-image: url(../Img/site-galeria.jpg);
-  }
-  .container .jobs ul li .galeria a {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-  .container .jobs ul li .store-master {
-    height: 250px;
-    width: 140px;
-    background-size: cover;
-    background-image: url(../Img/store-master.jpg);
-  }
-  .container .jobs ul li .store-master a {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-  .container .jobs ul li .wildbeast {
-    height: 250px;
-    width: 140px;
-    background-size: cover;
-    background-image: url(../Img/wildbeast.jpg);
-  }
-  .container .jobs ul li .wildbeast a {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-  .container .jobs ul li:hover .imobi {
-    transform: scale(1.5);
-  }
-  .container .jobs ul li:hover .food-site {
-    transform: scale(1.5);
-  }
-  .container .jobs ul li:hover .projeto-android {
-    transform: scale(1.5);
-  }
-  .container .jobs ul li:hover .galeria {
-    transform: scale(1.5);
-  }
-  .container .jobs ul li:hover .store-master {
-    transform: scale(1.5);
-  }
-  .container .jobs ul li:hover .wildbeast {
-    transform: scale(1.5);
+  .container .jobs ul li div:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   .container .footer {
     background: linear-gradient(to bottom, #0F7173, transparent);
@@ -667,11 +614,22 @@ p {
     width: 70px;
   }
   .container .footer .propert a {
-    color: 2rem;
+    color: rgba(87, 87, 87, 0.3215686275);
     font-style: italic;
     font-weight: bolder;
     text-indent: 30px;
     text-shadow: 0.75px 0.75px 1px rgba(0, 0, 0, 0.6901960784);
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 840px) {
+    .container .footer .propert a {
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .container .footer .propert a {
+      font-size: 1.3rem;
+    }
   }
 }
 

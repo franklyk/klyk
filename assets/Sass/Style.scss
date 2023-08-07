@@ -1,9 +1,6 @@
 @import "Libs/index";
 
 
-.col-wide{
-    grid-column: 1 / -1;
-}
 @include breakpoint('<=wide'){
     .container{
         display: grid;
@@ -28,37 +25,15 @@
             position: relative;
             width: 100%;
             @include breakpoint('<=narrower'){
-                    background: $caribe;
-                    height: 130px;
-                    .logo{
-                        display: block;
-                        top: 15px;
-                        width: 200px;
-                        .logo_png{
-                            width: 150px;
-                        }
-                        p{
-                            text-indent: 0;
-                        }
-                    }
-                    .menu-mobile{
-                        display: block;
-                        position: absolute;
-                        right: 35px;
-                        .line{
-                            background: $colorWhite;
-                         }
-                    }
-                    .nav{
-                        display: none;
-                    }
+                background: $caribe;
+                display: flex;
+                height: 130px;
             }
             @include breakpoint('<=mobile'){
                 height: 130px;
             }
             @include breakpoint('<=mobilep'){
                 height: 130px;
-
             }
             .logo{
                 left: 40px;
@@ -66,15 +41,13 @@
                 top: 48%;
                 width: 350px;
                 @include breakpoint('<=narrower'){
-                    display: block;
+                        display: block;
+                        top: 15px;
+                        width: 250px;
                 }
                 @include breakpoint('<=mobile'){
-                    display: block;
                 }
                 @include breakpoint('<=mobilep'){
-                    display: block;
-                    top: 15px;
-                    width: 200px;
                 }
 
                 p{
@@ -88,7 +61,10 @@
                     }
                     @include breakpoint('<=mobilep'){
                         @include fontSize(0.75rem);
-            }           text-shadow: none;
+                    }           
+                }
+                .logo_png{
+                    width: 150px;
                 }
             }
             .nav{
@@ -108,6 +84,9 @@
                             font-size: 1.3rem;
                         }
                     }
+                }
+                @include breakpoint('<=narrower'){
+                    display: none;
                 }
             }
             .menu-mobile{
@@ -137,6 +116,11 @@
                         transform: translateY(-9px) rotate(-225deg);
                     }
                 }
+                @include breakpoint('<=narrower'){
+                    display: block;
+                    right: 40px;
+                    position: absolute;
+                }
             }
         }
         .main{
@@ -149,6 +133,13 @@
             margin: 45px auto;
             max-width: 1000px;
             padding: 30px;
+            @include breakpoint('<=narrow'){
+                padding: 0;
+                width: 80%;
+            }
+            @include breakpoint('<=mobilep'){
+                display: block;
+            }
             .div1{
                 align-content: start; 
                 display: grid;
@@ -162,10 +153,12 @@
                     margin: 10px 0;
                     text-align: justify;
                     text-indent: 30px;
+                    @include breakpoint('<=narrow'){
+                        line-height: normal;
+                    }
                 }
             }
             .div2{
-    
                 align-content: start; 
                 display: grid;
                 grid-column: 2;
@@ -178,6 +171,9 @@
                     margin: 10px 0;
                     text-align: justify;
                     text-indent: 30px;
+                    @include breakpoint('<=narrower'){
+                        line-height: normal;
+                    }
                 }
             }
             .title{
@@ -187,20 +183,24 @@
             .intro{
                 border-radius: 3px;
                 box-shadow: $boxShadow;
+                @include breakpoint('<mobile'){
+                    margin: 30px 0;                           
+                }
                 p{
                     line-height: 1.8rem;
                     margin: auto;
                     max-width: 700px;
                     padding: 30px 0;
                     text-indent: 30px;
-    
+                    @include breakpoint('<=narrower'){
+                        line-height: normal;
+                    }
+                    
                 }
             }
             .subtitle{
                 text-indent: 30px;
             }
-            
-
             .p1{
                 margin: auto;
             }
@@ -210,6 +210,9 @@
                 border-radius: 3px;
                 margin-bottom: 10px;
                 padding-bottom: 1px;
+                @include breakpoint('<mobile'){
+                    margin: 30px 0;                           
+                }
                 img{
                     border-radius: 3px 3px 0 0;
                     width: 100%;
@@ -243,65 +246,50 @@
             }
             .exemples{
                 margin: auto;
-                width: 600px;
+                width: 70%;
                 h2{
                     margin-bottom: 30px;
                     text-shadow: $textShadow;
                 }
                 li{
-    
                     align-items: center;
                     display: flex;
                     justify-content: space-around;
+                    border-radius: 3px;
+                    margin: 30px 0;
+                    width: 100%;
                     img{
+                        margin: 10px;
                         width: 70px;
                     }                
                 }
-                .burger{    
-                    @include configDisplay;
-                }
-                .plane{
-                    @include configDisplay;
-                }
-                .locate{
-                    @include configDisplay;
-                }
-                .cloud{
-                    @include configDisplay;
-                }
-                .team{
-                    @include configDisplay;
-                }
-                .carrot{
-                    @include configDisplay;
-                }
-                .icons{
-                    @include configDisplay;
-                }
             }
             .conclusion1{
-                    
                 padding: 30px;
                 text-align: center;
             }
             .conclusion2{
-                    
                 background-image: url(../Img/wolrd-connected.jpg);
                 background-size: cover;
                 background-repeat: no-repeat;
                 border-radius: 3px;
+                @include breakpoint('<narrower'){
+                    margin: 30px 0;
+                }
                 p{
-                    @include fontConfig(1.6rem);
+                    @include fontConfig($colorWhite);
                     background: $colorFade;
                     border-radius: 3px;
                     line-height: 1.7rem;
                     padding: 30px;
                     text-indent: 30px;
+                    @include breakpoint('<=narrower'){
+                        line-height: normal;
+                    }
                 }
             }
             .p7{
-                    
-                @include fontConfig(1.7rem);
+                @include fontConfig($blueFederal);
                 align-self: center;
                 border-radius: 3px;
                 display: grid;
@@ -311,24 +299,28 @@
             .div4{
                 align-self: center;
                 p{
-                    @include fontConfig(1.5rem);
+                    @include fontConfig($blueFederal);
                     line-height: 1.7rem;
                     text-indent: 30px;
+                    @include breakpoint('<=narrower'){
+                        line-height: normal;
+                    }
                 }
             }
             .teclado{
-                    
                 border-radius: 3px;
                 display: grid;
                 align-self: center;
                 width: 100%;
+                @include breakpoint('<narrower'){
+                    margin: 30px 0;
+                }
             }
             
             .blockquote{
                 border-radius: 3px;
                 text-align: center;
                 p{
-                    @include fontConfig(2rem);
                     padding: 30px;
                 }
             }
@@ -338,48 +330,55 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 border-radius: 3px;
-                .p8{
-                    background: $colorFade;
-                    border-radius: 3px 3px 0 0;
+                @include breakpoint('<=narrower'){
+                    background-attachment: local;
+                    margin-bottom: 30px;
+                }
+                p{
                     color: $colorWhite;
                 }
+                .p8{
+                    border-radius: 3px 3px 0 0;
+                }
                 .p9{
-                    background: $colorFade;
-                    color: $colorWhite;
                     border-radius: 0 0 3px 3px;
                 }
             }
             .p10{
                 margin: auto;
-                max-width: 700px;
+                max-width: 600px;
             }
             .mind2{
                 :nth-child(2){
                     color: $caribe;
                 }
+                .p11, .p12, .p13{
+                    padding: 20px;
+                }
             }
-            .p12, .p13{
-                    
-                border-radius: 3px;
-                line-height: 1.9rem;
-                margin: 30px;
+            
+            .p15{
+                margin-bottom: 20px;
             }
             .finited{
-                align-items: center;
                 background-image: url(../Img/tablet.jpg);
+                background-position: right;
                 background-size: cover;
-                background-repeat: no-repeat;
                 border-radius: 3px;
-                display: grid;
                 text-align: center;
+            
                 p{
-                    background: $colorFade;
+                    color: $colorWhite;
                     padding: 50px;
+                    @include breakpoint('<mobile'){
+                        padding: 30px;
+                    }
                 }
-                .a3{
+                
+                .p16{
                     border-radius: 3px 3px 0 0;
                 }
-                .a4{
+                .p17{
                     border-radius: 0 0 3px 3px;
                 }
             }
@@ -400,93 +399,20 @@
                 width: 100%;
                 li{
                     margin: 0 auto;
-                    padding: 5px;         
-                    .imobi{
+                    padding: 5px;  
+                    div{
                         height: 250px;
-                        width: 140px;
+                        width: 140px;       
                         background-size: cover;
-                        background-image: url(../Img/site-imobiliaria.jpg);
                         a{
                             display: block;
                             height: 100%;
                             width: 100%;
                         }
-                    }
-                    .food-site{
-                        height: 250px;
-                        width: 140px;
-                        background-size: cover;
-                        background-image: url(../Img/site-lanches.jpg);
-                        a{
-                            display: block;
-                            height: 100%;
-                            width: 100%;
+                        &:hover{
+                            transform: scale3d(1.1, 1.1, 1.1);
                         }
                     }
-                    .projeto-android{
-                        height: 250px;
-                        width: 140px;
-                        background-size: cover;
-                        background-image: url(../Img/site-android.jpg);
-                        a{
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                        }
-                    }
-                    .galeria{
-                        height: 250px;
-                        width: 140px;
-                        background-size: cover;
-                        background-image: url(../Img/site-galeria.jpg);
-                        a{
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                        }
-                    }
-                    .store-master{
-                        height: 250px;
-                        width: 140px;
-                        background-size: cover;
-                        background-image: url(../Img/store-master.jpg);
-                        a{
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                        }
-                    }
-                    .wildbeast{
-                        height: 250px;
-                        width: 140px;
-                        background-size: cover;
-                        background-image: url(../Img/wildbeast.jpg);
-                        a{
-                            display: block;
-                            height: 100%;
-                            width: 100%;
-                        }
-                    }
-                    &:hover{
-                        .imobi{
-                            transform: scale(1.5);
-                        }
-                        .food-site{
-                            transform: scale(1.5);
-                        }
-                        .projeto-android{
-                            transform: scale(1.5);
-                        }
-                        .galeria{
-                            transform: scale(1.5);
-                        }
-                        .store-master{
-                            transform: scale(1.5);
-                        }
-                        .wildbeast{
-                            transform: scale(1.5);
-                        }
-                    } 
                 }
             }
         }
@@ -509,526 +435,16 @@
             }
             .propert{
                 a{
-                    @include fontConfig(2rem);
+                    @include fontConfig($colorWhite-Dark);
+                    font-size: 2.5rem;
+                    @include breakpoint('<=narrower'){
+                        @include fontSize(2rem);
+                    }
+                    @include breakpoint('<=mobilep'){
+                        @include fontSize(1.3rem);
+                    }
                 }
             }
         }
     } 
 }
-
-// @include breakpoint("<=narrower"){
-
-//     // .container{
-//     //     display: block;
-//     //     
-//     //     .main{
-//     //         padding: 0;
-//     //         width: 80%;
-//     //         .div1{
-//     //             @include fontConfig(1.2rem, $blueFederal);
-//     //             align-content: start; 
-//     //             display: grid;
-//     //             grid-column: 1;
-//     //             padding:  0 10px;
-//     //             h2{
-//     //                 @include fontConfig(1.4rem, $caribe);
-//     //                 padding-bottom: 10px
-//     //             }
-//     //             p{
-//     //                 line-height: 1.5rem;
-//     //                 margin: 10px 0;
-//     //                 text-align: justify;
-//     //                 text-indent: 30px;
-//     //             }
-//     //         }
-//     //         .div2{
-//     //             @include fontConfig(1.2rem, $blueFederal);
-//     //             align-content: start; 
-//     //             display: grid;
-//     //             grid-column: 2;
-//     //             padding: 0 10px;
-//     //             h2{
-//     //                 @include fontConfig(1.4rem, $caribe);
-//     //                 padding-bottom: 10px
-//     //             }
-//     //             p{
-//     //                 line-height: 1.5rem;
-//     //                 margin: 10px 0;
-//     //                 text-align: justify;
-//     //                 text-indent: 30px;
-//     //             }
-//     //         }
-//     //         .title{
-//     //             @include fontConfig(2.5rem, $caribe);
-//     //         }
-//     //         .intro{
-//     //             p{
-//     //                 @include fontConfig(1.2rem, $blueFederal);
-//     //                 padding: 20px;
-//     //                 text-indent: 0;
-//     //             }
-//     //         }
-//     //         .subtitle{
-//     //             @include fontConfig(1.7rem, $caribe);
-//     //         }
-//     //         .p1, .p2, .p3, .p4, .p5{
-//     //             @include fontConfig(1.2rem, $blueFederal);
-//     //         }
-//     //         .p1{
-//     //             text-align: center;
-//     //             margin: auto;
-//     //         }
-//     //         .img-arpanet, .internet-connect{
-//     //             align-self: end;
-//     //             background: $colorWhite;
-//     //             border-radius: 3px;
-//     //             margin-bottom: 10px;
-//     //             padding-bottom: 1px;
-//     //             img{
-//     //                 border-radius: 3px 3px 0 0;
-//     //                 width: 100%;
-//     //             }
-//     //             .figcaption{
-//     //                 color: $blueFederal;
-//     //                 font-size: 1rem;
-//     //                 padding: 2px;
-//     //                 text-indent: 10px;
-//     //                 text-shadow: none;
-//     //             }
-//     //         }
-//     //         .div3{       
-//     //             letter-spacing: 1px;
-//     //             margin: 10px 0;
-//     //             text-align: justify;
-//     //             text-indent: 30px;
-//     //             p{
-//     //                 @include fontConfig(1.2rem, $blueFederal);
-//     //                 margin: 30px auto;
-//     //                 max-width: 700px;
-//     //             }
-//     //         }
-//     //         .smartphone{
-//     //             img{
-//     //                 border-radius: 3px;
-//     //                 width: 100%;
-//     //             }
-//     //         }
-//     //         .p6{
-//     //             @include fontConfig(1.2rem, $blueFederal);
-//     //             align-self: center;
-//     //             display: grid;
-//     //             padding: 10px;
-//     //             text-align: justify;
-//     //         }
-//     //         .exemples{
-//     //             @include fontConfig(1.3rem, $blueFederal);
-//     //             width: 500px;
-//     //             h3{
-//     //                 @include fontConfig(2rem, $caribe);
-//     //             }
-//     //             li{                       
-//     //                 width: 90%;
-//     //                 img{
-//     //                     margin: 0 10px;
-//     //                     width: 60px;
-//     //                 }                
-//     //             }
-//     //             .burger{    
-//     //                 // @include configDisplay($colorBrown);
-//     //             }
-//     //             .plane{
-//     //                 // @include configDisplay($colorWhite-Dark);
-//     //             }
-//     //             .locate{
-//     //                 // @include configDisplay($chama);
-//     //             }
-//     //             .cloud{
-//     //                 // @include configDisplay($colorYellow);
-//     //             }
-//     //             .bascket{
-//     //                 // @include configDisplay($colorRed);
-//     //             }
-//     //             .carrot{
-//     //                 // @include configDisplay($chama);
-//     //             }
-//     //             .icons{
-//     //                 // @include configDisplay($colorYellow);
-//     //             }
-//     //         }
-//     //         .conclusion1{
-                    
-//     //             // @include fontConfig(1.2rem, $blueFederal);
-//     //         }
-//     //         .conclusion2{
-//     //             p{
-//     //                 // @include fontConfig(1.2rem, $colorWhite);
-//     //             }
-//     //         }
-//     //         .p7{
-                    
-//     //             // @include fontConfig(1.2rem, $blueFederal);
-//     //         }
-//     //         .div4{
-//     //             align-self: center;
-//     //             p{
-//     //                 // @include fontConfig(1.2rem, $blueFederal);
-//     //             }
-//     //         }
-//     //         .blockquote{
-//     //             border-radius: 3px;
-//     //             text-align: center;
-//     //             p{
-//     //                 // @include fontConfig(1.2rem, $blueFederal);
-//     //             }
-//     //         }
-//     //         .mind1{
-//     //             background-attachment: local;
-//     //             .fade{
-//     //                 background: $colorFade;
-//     //                 .p8{
-//     //                     border-radius: 3px 3px 0 0;
-//     //                     color: $colorWhite;
-//     //                 }
-//     //                 .p9{
-                        
-//     //                     // background: $colorFade;
-//     //                     color: $colorWhite;
-//     //                     border-radius: 0 0 3px 3px;
-//     //                 }
-//     //             }
-//     //         }
-//     //         .p10{
-//     //             // @include fontConfig(1.2rem, $blueFederal);
-//     //         }
-//     //         .mind2{
-//     //             :nth-child(2){
-//     //                 color: $caribe;
-//     //             }
-//     //         }
-//     //         .p12, .p13{
-                
-//     //             // @include fontConfig(1.2rem, $blueFederal);
-//     //         }
-//     //         .finited{
-//     //             background-position: right;
-//     //             .fade{
-//     //                 background: $colorFade;
-//     //                 .p14{
-//     //                     // @include fontConfig(1.2rem, $colorWhite);
-//     //                     border-radius: 3px 3px 0 0;
-//     //                 }
-//     //                 .p15{
-//     //                     // @include fontConfig(1.2rem, $colorWhite);
-//     //                     border-radius: 0 0 3px 3px;
-//     //                 }
-//     //             }
-//     //         }
-//     //     }
-//     //     .jobs{
-//     //         grid-area: jobs;
-//     //         margin: auto;
-//     //         width: 80%;
-//     //         h3{
-//     //             // @include fontConfig(2.5rem, $caribe);
-//     //             // padding: 30px 0;
-//     //             text-align: center;
-//     //         }
-//     //         ul{
-//     //             display: flex;
-//     //             flex-wrap: wrap;
-//     //             justify-content: space-around;
-//     //             margin: 0 auto;
-//     //             width: 90%;
-//     //             li{
-//     //                 margin: 0 auto;
-//     //                 padding: 3px;         
-//     //                 .imobi{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/site-imobiliaria.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 .food-site{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/site-lanches.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 .projeto-android{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/site-android.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 .galeria{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/site-galeria.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 .store-master{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/store-master.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 .wildbeast{
-//     //                     height: 180px;
-//     //                     width: 80px;
-//     //                     background-size: cover;
-//     //                     background-image: url(../Img/wildbeast.jpg);
-//     //                     background-position: center;
-//     //                     a{
-//     //                         display: block;
-//     //                         height: 100%;
-//     //                         width: 100%;
-//     //                     }
-//     //                 }
-//     //                 &:hover{
-//     //                     .imobi{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                     .food-site{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                     .projeto-android{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                     .galeria{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                     .store-master{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                     .wildbeast{
-//     //                         transform: scale(1.5);
-//     //                     }
-//     //                 } 
-//     //             }
-//     //         }
-//     //     }
-//     //     .footer{
-//     //         border-top: 5px solid $colorWhite-Dark;
-//     //         box-shadow: inset 0 50px 50px 0 $colorWhite-Dark;
-//     //         grid-area: footer;
-//     //         height: auto;
-//     //         padding: 20px 0;
-//     //         text-align: center;
-//     //         width: 100%;
-//     //         .contact{
-//     //             display: flex;
-//     //             justify-content: center;
-//     //             a{
-                    
-//     //                 img{
-//     //                     padding: 0 10px;
-//     //                     width: 70px;
-//     //                 }
-//     //             }
-//     //         }
-//     //         .propert{
-//     //             a{
-//     //                 // @include fontConfig(2rem, $colorWhite-Dark);
-//     //             }
-//     //         }
-//     //     }
-//     // } 
-// }
-// @include breakpoint("<=mobilep"){
-    // .container{
-    //     display: block;
-    //     .header{
-    //         height: 130px;
-    //         .logo{
-    //             display: block;
-    //             top: 15px;
-    //             width: 200px;
-    //             .logo_png{
-    //                 width: 130px;
-    //             }
-    //             p{
-    //                 font-size: 1rem;
-    //                 text-indent: 0;
-    //             }
-    //         }
-    //     }
-    //     .main{
-    //         display: block;
-    //         .div1{
-    //             // @include fontConfig(1.1rem, $blueFederal);
-    //             h2{
-    //                 // @include fontConfig(1.2rem, $caribe);
-    //                 padding-bottom: 10px
-    //             }
-    //             p{
-    //                 margin: 10px 0;
-    //                 text-align: justify;
-    //                 text-indent: 30px;
-    //             }
-    //         }
-    //         .div2{
-    //             // @include fontConfig(1.1rem, $blueFederal);
-    //             align-content: start; 
-    //             display: grid;
-    //             grid-column: 2;
-    //             padding: 0 10px;
-    //             h2{
-    //                 // @include fontConfig(1.4rem, $caribe);
-    //                 padding-bottom: 10px
-    //             }
-    //             p{
-    //                 line-height: 1.5rem;
-    //                 margin: 10px 0;
-    //                 text-align: justify;
-    //                 text-indent: 30px;
-    //             }
-    //         }
-    //         .title{
-    //             // @include fontConfig(2rem, $caribe);
-    //             padding: 20px 0
-    //         }
-    //         .intro{
-    //             p{
-    //                 // @include fontConfig(1.1rem, $blueFederal);
-    //                 padding: 20px;
-    //                 text-indent: 0;
-    //             }
-    //         }
-    //         .subtitle{
-    //             // @include fontConfig(1.7rem, $caribe);
-    //             padding: 20px 0;
-    //         }
-    //         .p1, .p2, .p3, .p4, .p5{
-    //             // @include fontConfig(1.1rem, $blueFederal);
-    //         }
-    //         .p1{
-    //             text-align: center;
-    //             margin: auto;
-    //         }
-    //         .img-arpanet, .internet-connect{
-    //             margin: 20px 0;
-    //             img{
-    //                 border-radius: 3px 3px 0 0;
-    //                 width: 100%;
-    //             }
-    //             .figcaption{
-    //                 color: $blueFederal;
-    //                 font-size: 1rem;
-    //                 padding: 2px;
-    //                 text-indent: 10px;
-    //                 text-shadow: none;
-    //             }
-    //         }
-    //         .div3{
-    //             p{
-    //                 // @include fontConfig(1.1rem, $blueFederal);
-    //             }
-    //         }
-    //         .exemples{
-    //             // @include fontConfig(1.2rem, $blueFederal);
-    //             margin-top: 20px;
-    //             width: 80%;
-    //             h3{
-    //                 // @include fontConfig(1.7rem, $caribe);
-    //             }
-    //         }
-    //         .conclusion1{
-                    
-    //             // @include fontConfig(1.2rem, $blueFederal);
-    //         }
-    //         .conclusion2{
-    //             margin: 20px 0;
-    //             p{
-    //                 // @include fontConfig(1.2rem, $colorWhite);
-    //             }
-    //         }
-    //         .p7{
-                    
-    //             // @include fontConfig(1.1rem, $blueFederal);
-    //         }
-    //         .div4{
-    //             p{
-    //                 // @include fontConfig(1.1rem, $blueFederal);
-    //             }
-    //         }
-    //         .blockquote{
-    //             border-radius: 3px;
-    //             text-align: center;
-    //             p{
-    //                 // @include fontConfig(1.2rem, $blueFederal);
-    //             }
-    //         }
-    //         .teclado{
-    //             margin: 20px 0;
-    //         }
-    //         .p10{
-    //             // @include fontConfig(1.1rem, $blueFederal);
-    //             margin-top: 20px;
-    //         }
-    //         .p12, .p13{
-                
-    //             // @include fontConfig(1.2rem, $blueFederal);
-    //         }
-    //     }
-    //     .jobs{
-    //         h3{
-    //             // @include fontConfig(2.5rem, $caribe);
-    //             text-align: center;
-    //         }
-    //         ul{
-    //             li{         
-    //                 &:hover{
-    //                     .imobi{
-    //                         transform: scale(1);
-    //                     }
-    //                     .food-site{
-    //                         transform: scale(1);
-    //                     }
-    //                     .projeto-android{
-    //                         transform: scale(1);
-    //                     }
-    //                     .galeria{
-    //                         transform: scale(1);
-    //                     }
-    //                     .store-master{
-    //                         transform: scale(1);
-    //                     }
-    //                     .wildbeast{
-    //                         transform: scale(1);
-    //                     }
-    //                 } 
-    //             }
-    //         }
-    //     }
-    // } 
-// }
