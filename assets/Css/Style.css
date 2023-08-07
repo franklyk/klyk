@@ -136,6 +136,28 @@ p {
   background: rgba(0, 0, 0, 0.6235294118);
 }
 
+[data-anime] {
+  opacity: 0;
+  transition: 0.7s;
+}
+
+[data-anime=left] {
+  transform: translate3d(-50px, 0px, 0px);
+}
+
+[data-anime=right] {
+  transform: translate3d(50px, 0px, 0px);
+}
+
+[data-anime=top] {
+  transform: translate3d(0px, 50px, 0px);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
 @media screen and (max-width: 2000px) {
   .container {
     display: grid;
